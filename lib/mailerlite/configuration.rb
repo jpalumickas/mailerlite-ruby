@@ -1,5 +1,4 @@
 require 'faraday_middleware'
-require 'mailerlite/middleware/raise_error'
 
 module MailerLite
   class Configuration
@@ -17,19 +16,6 @@ module MailerLite
 
     def user_agent
       USER_AGENT
-    end
-
-    def middleware
-      Faraday::RackBuilder.new do |builder|
-        builder.request :json
-
-        builder.use FaradayMiddleware::FollowRedirects
-        builder.use FaradayMiddleware::Mashify
-        builder.use FaradayMiddleware::ParseJson
-        builder.use MailerLite::Middleware::RaiseError
-
-        builder.adapter Faraday.default_adapter
-      end
     end
   end
 end

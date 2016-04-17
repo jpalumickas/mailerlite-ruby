@@ -1,6 +1,7 @@
+require 'mailerlite/core_ext/string'
+
 require 'mailerlite/version'
 require 'mailerlite/error'
-require 'mailerlite/configuration'
 require 'mailerlite/client'
 
 require 'faraday'

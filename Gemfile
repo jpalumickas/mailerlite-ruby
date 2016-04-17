@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'coveralls',    '~> 0.8.13', require: false

@@ -1,7 +1,12 @@
 require 'mailerlite/connection'
+require 'mailerlite/configuration'
+
+require 'mailerlite/clients/lists'
 
 module MailerLite
   class Client
+    include MailerLite::Clients::Lists
+
     def initialize(options = {})
       config.api_key = options[:api_key] if options[:api_key]
     end
