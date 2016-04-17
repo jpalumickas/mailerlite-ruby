@@ -20,6 +20,10 @@ gem 'mailerlite'
 
 ### Authentication
 
+When you sign up for an account, you are given an **API key**. You authenticate to
+the [MailerLite][mailerlite] API by providing your API key in the request.
+You can find your API key in page: Integrations » Developer API.
+
 ```ruby
 client = MailerLite::Client.new(api_key: 'my-secret-api-key')
 ```

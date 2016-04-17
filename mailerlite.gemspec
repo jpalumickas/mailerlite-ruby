@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ['jpalumickas@gmail.com']
 
   spec.summary       = 'Ruby wrapper for MailerLite API'
-  spec.description   = 'Unofficial ruby gem for MailerLite API'
+  spec.description   = 'Ruby gem for MailerLite API'
   spec.homepage      = 'https://github.com/jpalumickas/mailerlite-ruby'
+
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`
                        .split("\x0")
