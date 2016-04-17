@@ -1,4 +1,25 @@
+sudo: false
+
+before_install:
+  - gem install bundler
+
+bundler_args: --without development
+
 language: ruby
+
 rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+  - 2.2.0
   - 2.3.0
-before_install: gem install bundler -v 1.11.2
+  - ruby-head
+  - jruby-19mode
+  - jruby-head
+  - rbx
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby-head
+    - rvm: rbx
