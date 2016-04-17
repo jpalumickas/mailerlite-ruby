@@ -16,6 +16,7 @@ module MailerLite
     def config
       @config ||= Configuration.new
     end
+    alias configuration config
 
     def configure
       yield(config) if block_given?

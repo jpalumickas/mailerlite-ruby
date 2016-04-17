@@ -1,6 +1,5 @@
-require 'faraday_middleware'
-
 module MailerLite
+  # A class responsible for all configurations.
   class Configuration
     # Default API endpoint
     API_ENDPOINT = 'https://app.mailerlite.com/api/v1'.freeze

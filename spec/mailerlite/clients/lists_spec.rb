@@ -3,7 +3,7 @@ require 'spec_helper'
 describe MailerLite::Clients::Lists do
   let(:client) { MailerLite::Client.new(api_key: 'test_key') }
 
-  context 'lists' do
+  describe '#lists' do
     before do
       stub_get_command('lists', 'lists/all')
     end
@@ -17,7 +17,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'list' do
+  describe '#list' do
     before do
       stub_get_command('lists/11', 'lists/details')
     end
@@ -31,7 +31,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'create_list' do
+  describe '#create_list' do
     before do
       stub_post_command('lists', 'lists/add', name: 'My new list')
     end
@@ -47,7 +47,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'update_list' do
+  describe '#update_list' do
     before do
       stub_post_command('lists/11', 'lists/update', name: 'My another list')
     end
@@ -63,7 +63,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'delete_list' do
+  describe '#delete_list' do
     before do
       stub_delete_command('lists/11', 'lists/remove')
     end
@@ -79,7 +79,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'list_active_subscribers' do
+  describe '#list_active_subscribers' do
     before do
       stub_get_command('lists/11/active', 'lists/active_subscribers')
     end
@@ -95,7 +95,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'list_unsubscribed_subscribers' do
+  describe '#list_unsubscribed_subscribers' do
     before do
       stub_get_command(
         'lists/11/unsubscribed',
@@ -113,7 +113,7 @@ describe MailerLite::Clients::Lists do
     end
   end
 
-  context 'list_bounced_subscribers' do
+  describe '#list_bounced_subscribers' do
     before do
       stub_get_command('lists/11/bounced', 'lists/bounced_subscribers')
     end
