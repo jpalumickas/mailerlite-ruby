@@ -3,12 +3,14 @@ require 'mailerlite/configuration'
 
 require 'mailerlite/clients/campaigns'
 require 'mailerlite/clients/lists'
+require 'mailerlite/clients/subscribers'
 
 module MailerLite
   # Wrapper class for all actions.
   class Client
     include MailerLite::Clients::Campaigns
     include MailerLite::Clients::Lists
+    include MailerLite::Clients::Subscribers
 
     def initialize(options = {})
       config.api_key = options[:api_key] if options[:api_key]

@@ -47,10 +47,15 @@ implementations:
 * Ruby 2.2.0
 * Ruby 2.3.0
 
+## Copyright
+Copyright (c) 2016 Justas Palumickas. See [LICENSE][license] for details.
+
 [rubygems]: https://rubygems.org/gems/mailerlite
 [travis]: http://travis-ci.org/jpalumickas/mailerlite-ruby
 [gemnasium]: https://gemnasium.com/jpalumickas/mailerlite-ruby
 [coveralls]: https://coveralls.io/r/jpalumickas/mailerlite-ruby
 [codeclimate]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby
+
+[license]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/LICENSE
 
 [mailerlite]: https://www.mailerlite.com
