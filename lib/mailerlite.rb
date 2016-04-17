@@ -4,8 +4,6 @@ require 'mailerlite/version'
 require 'mailerlite/error'
 require 'mailerlite/client'
 
-require 'faraday'
-
 module MailerLite
   class << self
     def client

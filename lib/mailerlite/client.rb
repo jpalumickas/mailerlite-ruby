@@ -1,10 +1,12 @@
 require 'mailerlite/connection'
 require 'mailerlite/configuration'
 
+require 'mailerlite/clients/campaigns'
 require 'mailerlite/clients/lists'
 
 module MailerLite
   class Client
+    include MailerLite::Clients::Campaigns
     include MailerLite::Clients::Lists
 
     def initialize(options = {})

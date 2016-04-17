@@ -1,5 +1,9 @@
 module MailerLite
   module Clients
+    # Get information about MailerLite Lists.
+    #
+    # You can official documentation at
+    # https://docs.mailerlite.com/pages/lists
     module Lists
       def lists(options = {})
         connection.get('lists/', options)

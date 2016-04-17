@@ -1,7 +1,7 @@
 {
     "Results": [
         {
-            "id": "3096"
+            "id": "3096",
             "name": "My first campaign",
             "started": "2012-11-12 09:25:01",
             "updated": "2012-11-12 09:25:05",
@@ -14,7 +14,7 @@
             "junk": "1"
         },
         {
-            "id": "4589"
+            "id": "4589",
             "name": "My second campaign",
             "started": "2013-02-03 15:40:01",
             "updated": "2013-02-03 15:43:11",

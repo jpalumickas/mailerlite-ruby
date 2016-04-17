@@ -1,0 +1,22 @@
+{
+    "Results": [
+        {
+            "email": "first@example.com",
+            "date": "2013-02-03 15:41:25",
+            "link": "http://www.example.com"
+        },
+        {
+            "email": "second@example.com",
+            "date": "2013-02-03 15:42:22",
+            "link": "http://example.com/offers"
+        },
+        {
+            "email": "first@example.com",
+            "date": "2013-02-03 15:43:52",
+            "link": "Link to web-based version of this email from plain version"
+        }
+    ],
+    "Page": "1",
+    "Limit": "1000",
+    "RecordsOnPage": "3"
+}
