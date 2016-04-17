@@ -4,6 +4,7 @@ require 'mailerlite/version'
 require 'mailerlite/error'
 require 'mailerlite/client'
 
+# Main module for gem.
 module MailerLite
   class << self
     def client

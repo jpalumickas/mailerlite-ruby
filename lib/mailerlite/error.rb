@@ -1,4 +1,5 @@
 module MailerLite
+  # Base MailerLite error.
   class Error < StandardError
     # Returns the appropriate MailerLite::Error sublcass based
     # on status and response message.

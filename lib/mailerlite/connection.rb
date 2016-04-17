@@ -6,6 +6,7 @@ require 'mailerlite/middleware/raise_error'
 require 'mailerlite/middleware/underscore_keys'
 
 module MailerLite
+  # A class responsible for connecting to MailerLite API and making requests.
   class Connection
     attr_reader :client
 

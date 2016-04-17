@@ -5,6 +5,7 @@ require 'mailerlite/clients/campaigns'
 require 'mailerlite/clients/lists'
 
 module MailerLite
+  # Wrapper class for all actions.
   class Client
     include MailerLite::Clients::Campaigns
     include MailerLite::Clients::Lists
