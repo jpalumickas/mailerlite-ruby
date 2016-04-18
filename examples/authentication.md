@@ -34,3 +34,5 @@ Example:
 ```ruby
 MailerLite.campaigns
 ```
+
+[mailerlite]: https://www.mailerlite.com
