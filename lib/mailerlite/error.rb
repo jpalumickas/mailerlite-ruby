@@ -1,12 +1,12 @@
 module MailerLite
   # Base MailerLite error.
   class Error < StandardError
-    # Returns the appropriate MailerLite::Error sublcass based
-    # on status and response message.
+    # Returns the appropriate MailerLite::Error sublcass based on status and
+    # response message.
     #
-    # response - The Hash of HTTP response.
+    # @param response [Hash] HTTP response.
     #
-    # Returns the MailerLite::Error.
+    # @return [MailerLite::Error]
     def self.from_response(response)
       status = response[:status].to_i
 
@@ -22,6 +22,7 @@ module MailerLite
 
   # Raised when MailerLite returns a 400 HTTP status code
   class BadRequest < Error
+    # Default error message.
     def to_s
       'Missing a required parameter or calling invalid method'
     end
@@ -29,6 +30,7 @@ module MailerLite
 
   # Raised when MailerLite returns a 401 HTTP status code
   class Unauthorized < Error
+    # Default error message.
     def to_s
       'Invalid API key provided'
     end
@@ -36,6 +38,7 @@ module MailerLite
 
   # Raised when MailerLite returns a 404 HTTP status code
   class NotFound < Error
+    # Default error message.
     def to_s
       "Can't find requested items"
     end
