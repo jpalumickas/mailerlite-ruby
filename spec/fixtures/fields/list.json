@@ -1,0 +1,82 @@
+[
+  {
+    "id": 6,
+    "title": "Name",
+    "key": "name",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 8,
+    "title": "Email",
+    "key": "email",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 12,
+    "title": "Company",
+    "key": "company",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 14,
+    "title": "Country",
+    "key": "country",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 16,
+    "title": "City",
+    "key": "city",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 18,
+    "title": "Phone",
+    "key": "phone",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 20,
+    "title": "State",
+    "key": "state",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 22,
+    "title": "ZIP",
+    "key": "zip",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 24,
+    "title": "Last name",
+    "key": "last_name",
+    "type": "TEXT",
+    "date_updated": "",
+    "date_created": ""
+  },
+  {
+    "id": 28349,
+    "title": "Favourite Color",
+    "key": "favourite_color",
+    "type": "TEXT",
+    "date_updated": "2016-03-30 21:08:59",
+    "date_created": "2016-03-30 21:08:59"
+  }
+]
