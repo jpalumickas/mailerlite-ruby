@@ -1,0 +1,15 @@
+{
+  "id": 3640743,
+  "name": "Demo Group",
+  "total": 0,
+  "active": 0,
+  "unsubscribed": 0,
+  "bounced": 0,
+  "unconfirmed": 0,
+  "junk": 0,
+  "sent": 0,
+  "opened": 0,
+  "clicked": 0,
+  "date_created": null,
+  "date_updated": null
+}

@@ -2,14 +2,14 @@ require 'mailerlite/connection'
 require 'mailerlite/configuration'
 
 require 'mailerlite/clients/campaigns'
-require 'mailerlite/clients/lists'
+require 'mailerlite/clients/groups'
 require 'mailerlite/clients/subscribers'
 
 module MailerLite
   # Wrapper class for all actions.
   class Client
     include MailerLite::Clients::Campaigns
-    include MailerLite::Clients::Lists
+    include MailerLite::Clients::Groups
     include MailerLite::Clients::Subscribers
 
     # Initialize client.

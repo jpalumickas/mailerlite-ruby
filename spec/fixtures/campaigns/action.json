@@ -1,0 +1,53 @@
+{
+  "id": 2418787,
+  "count": 0,
+  "mail_id": 2851096,
+  "timezone": "120",
+  "account_id": 441087,
+  "campaign_type": "regular",
+  "date": "2016-09-30 13:15:00",
+  "end_time": "0000-00-00 00:00:00",
+  "send_date": "2016-09-30 15:15:00",
+  "opened": null,
+  "clicked": null,
+  "status": "draft",
+  "campaign_name": "Test regular campaign",
+  "mails": [
+    {
+      "id": 2851096,
+      "date": "2015-12-28 17:25:31",
+      "subject": "Test regular campaign",
+      "code": "t4h8j0",
+      "from": "demo@mailerlite.com",
+      "from_name": "Demo",
+      "url": "Test-regular-campaign-2851096",
+      "send_date": "2016-09-30 15:15:00",
+      "host": "mailerlite.com",
+      "type": "custom_html",
+      "updated": "2016-02-04 11:55:01",
+      "language": {
+        "code": "en",
+        "title": "English"
+      },
+      "groups": [
+        {
+          "id": 2984475,
+          "name": "Personal",
+          "total": 7,
+          "active": 7,
+          "unsubscribed": 0,
+          "bounced": 0,
+          "unconfirmed": 0,
+          "junk": 0,
+          "sent": 4,
+          "opened": 2,
+          "clicked": 1,
+          "ordering": 5,
+          "updating": 0,
+          "date": "2015-12-16 14:43:46",
+          "updated": "2016-01-29 07:45:54"
+        }
+      ]
+    }
+  ]
+}

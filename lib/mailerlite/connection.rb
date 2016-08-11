@@ -4,6 +4,7 @@ require 'json'
 
 require 'mailerlite/middleware/raise_error'
 require 'mailerlite/middleware/underscore_keys'
+require 'mailerlite/middleware/fix_unparsed_json'
 
 module MailerLite
   # A class responsible for connecting to MailerLite API and making requests.
@@ -26,6 +27,18 @@ module MailerLite
       options['apiKey'] = client.config.api_key
 
       response = connection.post do |req|
+        req.url(path)
+        req.headers['Content-Type'] = 'application/json'
+        req.body = options.to_json
+      end
+
+      response.body
+    end
+
+    def put(path, options = {})
+      options['apiKey'] = client.config.api_key
+
+      response = connection.put do |req|
         req.url(path)
         req.headers['Content-Type'] = 'application/json'
         req.body = options.to_json
@@ -64,6 +77,7 @@ module MailerLite
         builder.use FaradayMiddleware::Mashify
         builder.use MailerLite::Middleware::UnderscoreKeys
         builder.use FaradayMiddleware::ParseJson
+        builder.use MailerLite::Middleware::FixUnparsedJson
         builder.use MailerLite::Middleware::RaiseError
 
         builder.adapter Faraday.default_adapter
