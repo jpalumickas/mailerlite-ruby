@@ -1,0 +1,40 @@
+[
+  {
+    "date": "2016-03-24 22:52:02",
+    "report_id": 3377235,
+    "subject": "Demo Campaign #4",
+    "type": "open"
+  },
+  {
+    "date": "2016-03-16 11:07:36",
+    "report_id": 3315097,
+    "subject": "Demo campaign #3",
+    "type": "open"
+  },
+  {
+    "date": "2016-03-15 11:30:08",
+    "report_id": 3305419,
+    "subject": "5 books that changed our business",
+    "type": "click",
+    "link": "https://blog.mailerlite.com"
+  },
+  {
+    "date": "2016-03-15 11:30:04",
+    "report_id": 3305419,
+    "subject": "5 books that changed our business",
+    "type": "click",
+    "link": "https://blog.mailerlite.com/2016/01/5-books-that-changed-our-business/"
+  },
+  {
+    "date": "2016-03-15 11:29:59",
+    "report_id": 3305419,
+    "subject": "5 books that changed our business",
+    "type": "open"
+  },
+  {
+    "date": "2016-03-14 11:22:04",
+    "report_id": 3301113,
+    "subject": "Demo campaign #1",
+    "type": "open"
+  }
+]

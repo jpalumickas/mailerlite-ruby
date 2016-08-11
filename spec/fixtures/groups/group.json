@@ -1,0 +1,17 @@
+[
+  {
+    "id": 3640549,
+    "name": "Demo API v2 List",
+    "total": 1,
+    "active": 1,
+    "unsubscribed": 0,
+    "bounced": 0,
+    "unconfirmed": 0,
+    "junk": 0,
+    "sent": 0,
+    "opened": 0,
+    "clicked": 0,
+    "date_created": "2016-04-04 11:02:33",
+    "date_updated": "2016-04-04 11:02:33"
+  }
+]

@@ -4,93 +4,72 @@ module MailerLite
     #
     # @see https://docs.mailerlite.com/pages/subscribers
     module Subscribers
-      # Adds a subscriber to an existing subscriber list, including custom
-      # field data if supplied. If the subscriber (email address) already
-      # exists, their name and any custom field values are updated with
-      # whatever is passed in.
+      # Get single subscriber
       #
-      # @see https://docs.mailerlite.com/pages/subscribers#post
+      # @see https://developers.mailerlite.com/docs/single-subscriber
       #
-      # @param list_id [Integer,String] 	The ID of the subscriber list to
-      #   which the subscriber should be added.
-      # @param email [String] The email of the subscriber.
+      # @param identifier [Integer,String] ID or email of subscriber.
+      #
+      # @return [Hash] Response from API.
+      def subscriber(identifier)
+        connection.get("subscribers/#{identifier}")
+      end
+
+      # Update single subscriber
+      #
+      # @see https://developers.mailerlite.com/docs/update-subscriber
+      #
+      # @param identifier [Integer,String] ID or email of subscriber.
       # @param options [Hash] A customizable set of options.
-      # @option options [String] :name Name of the subscriber.
-      # @option options [Array] :fields Array of custom fields of the
-      #   subscriber.
-      # @option options [String] :resubscribe Set it to '1', if you want to
-      #   reactivate subscriber (default '0').
+      # @option options [Array] :fields Associated array where key is the same
+      #   as field key.
+      # @option options [String] :type Available values: unsubscribed, active
+      # @option options [Boolean] :resend_autoresponders Defines if it is
+      #   needed to resend autoresponders
       #
       # @return [Hash] Response from API.
-      def create_subscriber(list_id, email, options = {})
-        options[:email] = email
-
-        connection.post("subscribers/#{list_id}/", options)
+      def update_subscriber(identifier, options = {})
+        connection.put("subscribers/#{identifier}", options)
       end
 
-      # Allows you to add many subscribers to a subscriber list in one API
-      # request, including custom field data if supplied.
-      # If a subscriber (email address) already exists, their name and any
-      # custom field values are updated with whatever is passed in.
+      # Search for subscribers
       #
-      # @see https://docs.mailerlite.com/pages/subscribers#postImport
+      # @see https://developers.mailerlite.com/docs/search-for-subscribers
       #
-      # @param list_id [Integer,String] 	The ID of the subscriber list to
-      #   which the subscriber should be added.
+      # @param query [String] Search query
       # @param options [Hash] A customizable set of options.
-      # @option options [Array] :subscribers Array of subscribers.
-      # @option options [String] :resubscribe Set it to '1', if you want to
-      #   reactivate subscriber (default '0').
+      # @option options [Integer] :offset
+      # @option options [Integer] :limit
+      # @option options [Boolean] :minimized
       #
-      # @return [Hash] Response from API.
-      def create_subscribers(list_id, options = {})
-        connection.post("subscribers/#{list_id}/import/", options)
+      # @return [Array] Response from API.
+      def search_subscribers(query, options = {})
+        options[:query] = query
+        connection.get('subscribers/search', options)
       end
 
-      # Retrieves a subscriber's details including their email address, name,
-      # active/inactive state, and any custom field data.
+      # Get groups subscriber belongs to
       #
-      # @see https://docs.mailerlite.com/pages/subscribers#get
+      # @see https://developers.mailerlite.com/docs/groups-subscriber-belongs-to
       #
-      # @param email [String] The email address of the subscriber whose details
-      #   should be retrieved.
-      # @param options [Hash] A customizable set of options.
-      # @option options [Boolean] :history Set to true if you want to get
-      #   historical records of campaigns and autoresponder emails received
-      #   by a subscriber (default - false).
+      # @param identifier [Integer,String] ID or email of subscriber.
       #
-      # @return [Hash] Response from API.
-      def subscriber(email, options = {})
-        options[:email] = email
-
-        connection.get('subscribers/', options)
+      # @return [Array] Response from API.
+      def subscriber_groups(identifier)
+        connection.get("subscribers/#{identifier}/groups")
       end
 
-      # Removes subscriber from the group. He will no longer receive campaigns
-      # sent to this group.
+      # Get activity (clicks, opens, etc) of selected subscriber
       #
-      # @see https://docs.mailerlite.com/pages/subscribers#delete
+      # @see https://developers.mailerlite.com/docs/activity-of-single-subscriber
       #
-      # @param list_id [Integer, String] The ID of the subscriber list to which
-      #   the subscriber should be added.
-      # @param email [String] The email of the subscriber.
+      # @param identifier [Integer,String] ID or email of subscriber.
       #
-      # @return [Hash] Response from API.
-      def delete_subscriber(list_id, email)
-        connection.delete("subscribers/#{list_id}/", email: email)
+      # @return [Array] Response from API.
+      def subscriber_activities(identifier)
+        connection.get("subscribers/#{identifier}/activity")
       end
-
-      # Marks subscriber as unsubscribed. He will no longer receive any
-      # campaigns.
-      #
-      # @see https://docs.mailerlite.com/pages/subscribers#postUnsubscribe
-      #
-      # @param email [String] The email of the subscriber.
-      #
-      # @return [Hash] Response from API.
-      def unsubscribe_subscriber(email)
-        connection.post('subscribers/unsubscribe/', email: email)
-      end
+      alias subscriber_activity subscriber_activities
     end
   end
 end

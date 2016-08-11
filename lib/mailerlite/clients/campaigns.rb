@@ -1,42 +1,54 @@
 module MailerLite
   module Clients
-    # Get information about MailerLite Campaigns.
-    #
-    # You can official documentation at
-    # https://docs.mailerlite.com/pages/campaigns
+    # MailerLite Campaigns.
     module Campaigns
-      def campaigns(options = {})
-        connection.get('campaigns/', options)
+      # Create campaign where you will use your custom HTML template
+      #
+      # @see https://developers.mailerlite.com/docs/campaigns
+      #
+      # @param options [Hash] A customizable set of options.
+      # @option options [String] :type Type of campaign. Available values:
+      #   regular, ab.
+      # @option options [String] :subject Mail subject. Required if campaign
+      #   type is regular.
+      # @option options [String] :from Email of sender
+      # @option options [String] :from_name Name of sender
+      # @option options [String] :language ISO 639-1
+      # @option options [Array] :groups IDs of groups
+      # @option options [Hash] :ab_settings Required if campaign type is ab.
+      #
+      # @return [Hash] Response from API.
+      def create_campaign(options = {})
+        connection.post('campaigns', options)
       end
 
-      def campaign(id)
-        connection.get("campaigns/#{id}/")
+      # Upload your HTML template to created campaign
+      #
+      # @see https://developers.mailerlite.com/docs/put-custom-content-to-campaign
+      #
+      # @param id [Integer] ID of campaign
+      # @param options [Hash] A customizable set of options.
+      # @option options [String] :html HTML template source
+      # @option options [String] :plain Plain text of email
+      # @option options [Boolean] :auto_inline Defines if it is needed to
+      #   convert available CSS to inline CSS (excluding media queries)
+      #
+      # @return [Hash] Response from API.
+      def update_campaign_content(id, options = {})
+        connection.put("campaigns/#{id}/content", options)
       end
 
-      def campaign_recipients(id, options = {})
-        connection.get("campaigns/#{id}/recipients/", options)
+      # Send, schedule or cancel campaign
+      #
+      # @see https://developers.mailerlite.com/docs/campaign-actions-and-triggers
+      #
+      # @param id [Integer] ID of campaign
+      # @param action [String] Action type. Possible values: send, cancel
+      #
+      # @return [Hash] Response from API.
+      def campaign_action(id, action)
+        connection.post("campaigns/#{id}/actions/#{action}")
       end
-
-      def campaign_opens(id, options = {})
-        connection.get("campaigns/#{id}/opens/", options)
-      end
-
-      def campaign_clicks(id, options = {})
-        connection.get("campaigns/#{id}/clicks/", options)
-      end
-
-      def campaign_unsubscribes(id, options = {})
-        connection.get("campaigns/#{id}/unsubscribes/", options)
-      end
-
-      def campaign_bounces(id, options = {})
-        connection.get("campaigns/#{id}/bounces/", options)
-      end
-
-      def campaign_junk(id, options = {})
-        connection.get("campaigns/#{id}/junk/", options)
-      end
-      alias campaign_spam_complaints campaign_junk
     end
   end
 end

@@ -1,0 +1,17 @@
+{
+  "imported": [
+    {
+      "id": 1343991205,
+      "email": "another.demo@mailerlite.com"
+    }
+  ],
+  "updated": [
+  ],
+  "unchanged": [
+    {
+      "id": 1343965485,
+      "email": "demo@mailerlite.com"
+    }
+  ],
+  "errors": []
+}

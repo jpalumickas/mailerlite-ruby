@@ -3,78 +3,87 @@ require 'spec_helper'
 describe MailerLite::Clients::Subscribers do
   let(:client) { MailerLite::Client.new(api_key: 'test_key') }
 
-  describe '#create_subscriber' do
-    before do
-      stub_post_command(
-        'subscribers/123', 'subscribers/add', email: 'first@example.com')
-    end
-
-    let(:response) { client.create_subscriber(123, 'first@example.com') }
-
-    it 'has correct response email' do
-      expect(response.email).to eq('first@example.com')
-    end
-  end
-
-  describe '#create_subscribers' do
-    let(:options) { { subscribers: [{ email: 'first@example.co' }] } }
-    before do
-      stub_post_command(
-        'subscribers/123/import', 'subscribers/import', options)
-    end
-
-    let(:response) { client.create_subscribers(123, options) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(2)
-    end
-
-    it 'has correct result email' do
-      expect(response.results.first.email).to eq('first@example.co')
-    end
-
-    it 'has correct result message' do
-      expect(response.results.first.message).to eq('Wrong email address')
-    end
-  end
-
   describe '#subscriber' do
     before do
       stub_get_command(
-        'subscribers', 'subscribers/details', email: 'first@example.com')
+        'subscribers/demo@mailerlite.com', 'subscribers/show'
+      )
     end
 
-    let(:response) { client.subscriber('first@example.com') }
+    let(:response) { client.subscriber('demo@mailerlite.com') }
 
-    it 'has correct response email' do
-      expect(response.email).to eq('first@example.com')
+    it 'has correct subscriber email' do
+      expect(response.email).to eq('demo@mailerlite.com')
     end
   end
 
-  describe '#delete_subscriber' do
+  describe '#update_subscriber' do
     before do
-      stub_delete_command(
-        'subscribers/123', 'subscribers/delete', email: 'first@example.com')
+      stub_put_command(
+        'subscribers/demo@mailerlite.com', 'subscribers/update',
+        type: 'unsubscribed'
+      )
     end
 
-    let(:response) { client.delete_subscriber(123, 'first@example.com') }
+    let(:response) do
+      client.update_subscriber('demo@mailerlite.com', type: 'unsubscribed')
+    end
 
-    it 'has correct response'
-    # TODO: Waiting for MailerLite response fix.
-    # expect(response).to eq('first@example.com')
+    it 'has correct subscriber email' do
+      expect(response.email).to eq('demo@mailerlite.com')
+    end
+
+    it 'has correct subscriber type' do
+      expect(response.type).to eq('unsubscribed')
+    end
   end
 
-  describe '#unsubscribe_subscriber' do
+  describe '#search_subscribers' do
     before do
-      stub_post_command(
-        'subscribers/unsubscribe', 'subscribers/unsubscribe',
-        email: 'first@example.com')
+      stub_get_command(
+        'subscribers/search', 'subscribers/search',
+        query: 'demo@mailerlite.com'
+      )
     end
 
-    let(:response) { client.unsubscribe_subscriber('first@example.com') }
+    let(:response) do
+      client.search_subscribers('demo@mailerlite.com')
+    end
 
-    it 'has correct response'
-    # TODO: Waiting for MailerLite response fix.
-    # expect(response).to eq('first@example.com')
+    it 'has correct first subscriber email' do
+      expect(response.first.email).to eq('demo@mailerlite.com')
+    end
+  end
+
+  describe '#subscriber_groups' do
+    before do
+      stub_get_command(
+        'subscribers/demo@mailerlite.com/groups', 'subscribers/groups'
+      )
+    end
+
+    let(:response) { client.subscriber_groups('demo@mailerlite.com') }
+
+    it 'has correct subscriber first group name' do
+      expect(response.first.name).to eq('Main List')
+    end
+  end
+
+  describe '#subscriber_activities' do
+    before do
+      stub_get_command(
+        'subscribers/demo@mailerlite.com/activity', 'subscribers/activity'
+      )
+    end
+
+    let(:response) { client.subscriber_activities('demo@mailerlite.com') }
+
+    it 'has correct subscriber first avtivity subject' do
+      expect(response.first.subject).to eq('Demo Campaign #4')
+    end
+
+    it 'has correct alias method' do
+      expect(client.subscriber_activity('demo@mailerlite.com')).to eq(response)
+    end
   end
 end

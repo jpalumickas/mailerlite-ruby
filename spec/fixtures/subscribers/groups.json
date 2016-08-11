@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1996556,
+    "name": "Main List",
+    "total": 9,
+    "active": 9,
+    "unsubscribed": 0,
+    "bounced": 0,
+    "unconfirmed": 0,
+    "junk": 0,
+    "sent": 0,
+    "opened": 0,
+    "clicked": 0,
+    "date_created": "2016-02-12 11:04:45",
+    "date_updated": "2016-03-30 23:09:30"
+  },
+  {
+    "id": 1996559,
+    "name": "iPad App Subscribers",
+    "total": 101,
+    "active": 95,
+    "unsubscribed": 6,
+    "bounced": 0,
+    "unconfirmed": 0,
+    "junk": 0,
+    "sent": 0,
+    "opened": 0,
+    "clicked": 0,
+    "date_created": "2016-02-24 15:16:52",
+    "date_updated": "2016-02-24 16:27:43"
+  }
+]

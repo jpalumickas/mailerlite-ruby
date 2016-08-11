@@ -3,135 +3,48 @@ require 'spec_helper'
 describe MailerLite::Clients::Campaigns do
   let(:client) { MailerLite::Client.new(api_key: 'test_key') }
 
-  describe '#campaigns' do
+  describe '#create_campaign' do
     before do
-      stub_get_command('campaigns', 'campaigns/all')
+      stub_post_command(
+        'campaigns', 'campaigns/create', type: 'regular', groups: [1]
+      )
     end
 
-    let(:response) { client.campaigns }
+    let(:response) { client.create_campaign(type: 'regular', groups: [1]) }
 
-    it 'has correct results count' do
-      expect(response.results.count).to eq(2)
-    end
-
-    it 'has correct first result name' do
-      expect(response.results.first.name).to eq('My first campaign')
+    it 'has correct campaign type' do
+      expect(response.campaign_type).to eq('regular')
     end
   end
 
-  describe '#campaign' do
+  describe '#update_campaign_content' do
     before do
-      stub_get_command('campaigns/3096', 'campaigns/details')
+      stub_put_command(
+        'campaigns/1/content', 'campaigns/update_content',
+        html: 'html', plain: 'plain'
+      )
     end
 
-    let(:response) { client.campaign(3096) }
-
-    it 'has correct id' do
-      expect(response.id).to eq('3096')
+    let(:response) do
+      client.update_campaign_content(1, html: 'html', plain: 'plain')
     end
 
-    it 'has correct name' do
-      expect(response.name).to eq('My first campaign')
+    it 'has correct campaign type' do
+      expect(response.success).to eq(true)
     end
   end
 
-  describe '#campaign_recipients' do
+  describe '#campaign_action' do
     before do
-      stub_get_command('campaigns/3096/recipients', 'campaigns/recipients')
+      stub_post_command('campaigns/1/actions/send', 'campaigns/action')
     end
 
-    let(:response) { client.campaign_recipients(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(3)
+    let(:response) do
+      client.campaign_action(1, 'send')
     end
 
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example.com')
-    end
-  end
-
-  describe '#campaign_opens' do
-    before do
-      stub_get_command('campaigns/3096/opens', 'campaigns/opens')
-    end
-
-    let(:response) { client.campaign_opens(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(3)
-    end
-
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example.com')
-    end
-  end
-
-  describe '#campaign_clicks' do
-    before do
-      stub_get_command('campaigns/3096/clicks', 'campaigns/clicks')
-    end
-
-    let(:response) { client.campaign_clicks(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(3)
-    end
-
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example.com')
-    end
-  end
-
-  describe '#campaign_unsubscribes' do
-    before do
-      stub_get_command('campaigns/3096/unsubscribes', 'campaigns/unsubscribes')
-    end
-
-    let(:response) { client.campaign_unsubscribes(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(3)
-    end
-
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example.com')
-    end
-  end
-
-  describe '#campaign_bounces' do
-    before do
-      stub_get_command('campaigns/3096/bounces', 'campaigns/bounces')
-    end
-
-    let(:response) { client.campaign_bounces(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(2)
-    end
-
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example5.co')
-    end
-  end
-
-  describe '#campaign_junk' do
-    before do
-      stub_get_command('campaigns/3096/junk', 'campaigns/junk')
-    end
-
-    let(:response) { client.campaign_junk(3096) }
-
-    it 'has correct results count' do
-      expect(response.results.count).to eq(2)
-    end
-
-    it 'has correct first result email' do
-      expect(response.results.first.email).to eq('first@example.com')
-    end
-
-    it 'has correct alias method' do
-      expect(client.campaign_spam_complaints(3096)).to eq(response)
+    it 'has correct campaign id' do
+      expect(response.id).to eq(2_418_787)
     end
   end
 end

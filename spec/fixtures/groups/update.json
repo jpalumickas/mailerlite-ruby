@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name": "Renamed Group",
+  "total": 0,
+  "active": 0,
+  "unsubscribed": 0,
+  "bounced": 0,
+  "unconfirmed": 0,
+  "junk": 0,
+  "sent": 0,
+  "opened": 0,
+  "clicked": 0,
+  "date_created": "2016-04-04 11:14:18",
+  "date_updated": "2016-04-04 11:14:18"
+}
