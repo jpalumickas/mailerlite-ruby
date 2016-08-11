@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Justas Palumickas']
   spec.email         = ['jpalumickas@gmail.com']
 
-  spec.summary       = 'Ruby wrapper for MailerLite API'
-  spec.description   = 'Ruby gem for MailerLite API'
+  spec.summary       = 'Ruby wrapper for MailerLite API v2'
+  spec.description   = 'Ruby gem for MailerLite API v2'
   spec.homepage      = 'https://github.com/jpalumickas/mailerlite-ruby'
 
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`
-                       .split("\x0")
-                       .reject { |f| f.match(%r{^(test|spec|features)/}) }
+    .split("\x0")
+    .reject { |f| f.match(%r{^(test|spec|features)/}) }
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

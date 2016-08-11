@@ -1,4 +1,4 @@
-# MailerLite API Ruby wrapper
+# MailerLite API v2 Ruby wrapper
 
 A Ruby gem which helps to communicate with [MailerLite][mailerlite] API.
 
