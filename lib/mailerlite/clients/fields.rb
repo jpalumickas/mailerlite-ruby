@@ -1,6 +1,6 @@
 module MailerLite
   module Clients
-    # Get information about MailerLite Fields
+    # MailerLite Fields
     module Fields
       # Get subscriber fields of account
       #

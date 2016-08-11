@@ -1,8 +1,6 @@
 module MailerLite
   module Clients
-    # Get information about MailerLite Subscribers.
-    #
-    # @see https://docs.mailerlite.com/pages/subscribers
+    # MailerLite Subscribers
     module Subscribers
       # Get single subscriber
       #

@@ -1,10 +1,12 @@
 module MailerLite
   module Clients
-    # Get information about MailerLite Lists.
-    #
-    # You can official documentation at
-    # https://developers.mailerlite.com/docs/groups
+    # MailerLite Groups
     module Groups
+      # Get list of groups
+      #
+      # @see https://developers.mailerlite.com/docs/groups
+      #
+      # @return [Array] Response from API.
       def groups
         connection.get('groups')
       end

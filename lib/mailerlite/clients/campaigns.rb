@@ -1,6 +1,6 @@
 module MailerLite
   module Clients
-    # MailerLite Campaigns.
+    # MailerLite Campaigns
     module Campaigns
       # Create campaign where you will use your custom HTML template
       #
