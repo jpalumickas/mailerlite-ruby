@@ -9,6 +9,10 @@ describe MailerLite do
     expect(MailerLite.client).to be_a(MailerLite::Client)
   end
 
+  it 'responds to config' do
+    expect(MailerLite.respond_to?(:config)).to be_truthy
+  end
+
   context 'configuration' do
     before do
       MailerLite.configure do |config|

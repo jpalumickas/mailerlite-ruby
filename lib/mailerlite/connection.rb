@@ -19,39 +19,26 @@ module MailerLite
       request(:get, path, options).body
     end
 
+    def put(path, options = {})
+      request(:put, path, {}, options).body
+    end
+
+    def post(path, options = {})
+      request(:post, path, {}, options).body
+    end
+
     def delete(path, options = {})
       request(:delete, path, options).body
     end
 
-    def post(path, options = {})
-      response = connection.post do |req|
-        req.url(path)
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['X-MailerLite-ApiKey'] = client.config.api_key
-        req.body = options.to_json
-      end
-
-      response.body
-    end
-
-    def put(path, options = {})
-      response = connection.put do |req|
-        req.url(path)
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['X-MailerLite-ApiKey'] = client.config.api_key
-        req.body = options.to_json
-      end
-
-      response.body
-    end
-
     private
 
-    def request(method, path, options = {})
+    def request(method, path, query_params = {}, body_params = {})
       response = connection.send(method) do |request|
-        request.url(path, options)
+        request.url(path, query_params)
         request.headers['Content-Type'] = 'application/json'
         request.headers['X-MailerLite-ApiKey'] = client.config.api_key
+        request.body = body_params.to_json
       end
 
       response
