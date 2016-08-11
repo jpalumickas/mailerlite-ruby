@@ -11,11 +11,11 @@ module MailerLite
       status = response[:status].to_i
 
       klass = case status
-              when 400 then MailerLite::BadRequest
-              when 401 then MailerLite::Unauthorized
-              when 404 then MailerLite::NotFound
-              when 500 then MailerLite::InternalServerError
-              end
+      when 400 then MailerLite::BadRequest
+      when 401 then MailerLite::Unauthorized
+      when 404 then MailerLite::NotFound
+      when 500 then MailerLite::InternalServerError
+      end
 
       klass.new if klass
     end
