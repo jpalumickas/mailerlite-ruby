@@ -14,6 +14,7 @@ module MailerLite
               when 400 then MailerLite::BadRequest
               when 401 then MailerLite::Unauthorized
               when 404 then MailerLite::NotFound
+              when 500 then MailerLite::InternalServerError
               end
 
       klass.new if klass
@@ -41,6 +42,14 @@ module MailerLite
     # Default error message.
     def to_s
       "Can't find requested items"
+    end
+  end
+
+  # Raised when MailerLite returns a 500 HTTP status code
+  class InternalServerError < Error
+    # Default error message.
+    def to_s
+      'The server encountered an unexpected condition'
     end
   end
 end

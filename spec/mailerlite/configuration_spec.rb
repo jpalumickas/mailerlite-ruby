@@ -6,7 +6,7 @@ describe MailerLite::Configuration do
 
   describe '#url' do
     it 'has correct default value' do
-      expect(config.url).to eq('https://app.mailerlite.com/api/v1')
+      expect(config.url).to eq('https://api.mailerlite.com/api/v2')
     end
 
     it 'has correct custom value' do

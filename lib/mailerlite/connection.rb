@@ -24,11 +24,10 @@ module MailerLite
     end
 
     def post(path, options = {})
-      options['apiKey'] = client.config.api_key
-
       response = connection.post do |req|
         req.url(path)
         req.headers['Content-Type'] = 'application/json'
+        req.headers['X-MailerLite-ApiKey'] = client.config.api_key
         req.body = options.to_json
       end
 
@@ -36,11 +35,10 @@ module MailerLite
     end
 
     def put(path, options = {})
-      options['apiKey'] = client.config.api_key
-
       response = connection.put do |req|
         req.url(path)
         req.headers['Content-Type'] = 'application/json'
+        req.headers['X-MailerLite-ApiKey'] = client.config.api_key
         req.body = options.to_json
       end
 
@@ -50,10 +48,10 @@ module MailerLite
     private
 
     def request(method, path, options = {})
-      options['apiKey'] = client.config.api_key
-
       response = connection.send(method) do |request|
         request.url(path, options)
+        request.headers['Content-Type'] = 'application/json'
+        request.headers['X-MailerLite-ApiKey'] = client.config.api_key
       end
 
       response

@@ -7,7 +7,8 @@ describe MailerLite::Error do
       expect { raise MailerLite::Error.from_response(response) }
         .to raise_error(
           MailerLite::BadRequest,
-          'Missing a required parameter or calling invalid method')
+          'Missing a required parameter or calling invalid method'
+        )
     end
 
     it 'has unauthorized error raised when status is 401' do
@@ -20,6 +21,15 @@ describe MailerLite::Error do
       response = { status: 404 }
       expect { raise MailerLite::Error.from_response(response) }
         .to raise_error(MailerLite::NotFound, "Can't find requested items")
+    end
+
+    it 'has internal server error raised when status is 500' do
+      response = { status: 500 }
+      expect { raise MailerLite::Error.from_response(response) }
+        .to raise_error(
+          MailerLite::InternalServerError,
+          'The server encountered an unexpected condition'
+        )
     end
   end
 end
