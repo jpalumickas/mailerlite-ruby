@@ -31,6 +31,45 @@ module MailerLite
       def update_subscriber(identifier, options = {})
         connection.put("subscribers/#{identifier}", options)
       end
+
+      # Search for subscribers
+      #
+      # @see https://developers.mailerlite.com/docs/search-for-subscribers
+      #
+      # @param query [String] Search query
+      # @param options [Hash] A customizable set of options.
+      # @option options [Integer] :offset
+      # @option options [Integer] :limit
+      # @option options [Boolean] :minimized
+      #
+      # @return [Array] Response from API.
+      def search_subscribers(query, options = {})
+        options[:query] = query
+        connection.get('subscribers/search', options)
+      end
+
+      # Get groups subscriber belongs to
+      #
+      # @see https://developers.mailerlite.com/docs/groups-subscriber-belongs-to
+      #
+      # @param identifier [Integer,String] ID or email of subscriber.
+      #
+      # @return [Array] Response from API.
+      def subscriber_groups(identifier)
+        connection.get("subscribers/#{identifier}/groups")
+      end
+
+      # Get activity (clicks, opens, etc) of selected subscriber
+      #
+      # @see https://developers.mailerlite.com/docs/activity-of-single-subscriber
+      #
+      # @param identifier [Integer,String] ID or email of subscriber.
+      #
+      # @return [Array] Response from API.
+      def subscriber_activities(identifier)
+        connection.get("subscribers/#{identifier}/activity")
+      end
+      alias subscriber_activity subscriber_activities
     end
   end
 end
