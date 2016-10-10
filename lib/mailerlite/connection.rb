@@ -37,7 +37,7 @@ module MailerLite
       response = connection.send(method) do |request|
         request.url(path, query_params)
         request.headers['Content-Type'] = 'application/json'
-        request.headers['X-MailerLite-ApiKey'] = client.config.api_key
+        request.headers['X-MailerLite-ApiKey'] = client.config.api_key if client.config.api_key
         request.body = body_params.to_json
       end
 
