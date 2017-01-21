@@ -1,0 +1,23 @@
+[
+  {
+    "id": 5723407,
+    "total_recipients": 1,
+    "type": "regular",
+    "date_created": "2017-01-19 08:39:31",
+    "date_send": "2017-01-19 08:44:00",
+    "name": "first title",
+    "status": "sent",
+    "opened": {"count": 0, "rate": 0},
+    "clicked": {"count": 0, "rate": 0}
+  }, {
+    "id": 5672486,
+    "total_recipients": 1,
+    "type": "regular",
+    "date_created": "2017-01-14 07:01:19",
+    "date_send": "2017-01-14 10:34:00",
+    "name": "second title",
+    "status": "sent",
+    "opened": {"count": 0, "rate": 0},
+    "clicked": {"count": 0, "rate": 0}
+  }
+]

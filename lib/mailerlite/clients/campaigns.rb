@@ -49,6 +49,28 @@ module MailerLite
       def campaign_action(id, action)
         connection.post("campaigns/#{id}/actions/#{action}")
       end
+
+      # Returns all campaigns you have in your account by :status which is
+      # required. Also basic summary for each campaign including the ID.
+      #
+      # @see http://developers.mailerlite.com/reference#campaigns-by-type
+      #
+      # @param status [String] possible values: 'sent', 'outbox', 'draft'
+      # no value means 'sent'
+      #
+      # @return Response from API.
+      def campaigns_by_status(status)
+        connection.get("campaigns/#{status}")
+      end
+
+      # Remove a campaign.
+      #
+      # @param id [Integer] id of campaign
+      #
+      # @return [Boolean] Response from API.
+      def delete_campaign(id)
+        connection.delete("campaigns/#{id}")
+      end
     end
   end
 end
