@@ -64,5 +64,6 @@ Copyright (c) 2017 Justas Palumickas. See [LICENSE][license] for details.
 
 [license]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/LICENSE
 [create_a_campaign]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/examples/create_campaign.md
+[examples]: https://github.com/jpalumickas/mailerlite-ruby/tree/master/examples
 
 [mailerlite]: https://www.mailerlite.com
