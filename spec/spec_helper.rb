@@ -6,7 +6,7 @@ require 'codeclimate-test-reporter'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter,
+  Coveralls::SimpleCov::Formatter
 ]
 
 SimpleCov.start
