@@ -40,7 +40,7 @@ MailerLite.configure do |config|
 end
 ```
 
-See more documentation in (examples)[examples] directory.
+See more documentation in [examples][examples] directory.
 
 ## Supported Ruby Versions
 
