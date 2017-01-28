@@ -18,12 +18,14 @@ fields: {name: 'An Example'}})
 ```
 ##4. Create a campaign with created group
 ```ruby
-campaign = client.create_campaign type: 'regular',
+campaign = client.create_campaign(
+    type: 'regular',
     subject: 'Newsletter',
     from: 'john_smith@example.com',
     from_name: 'John Smith',
     groups: [ group.id ],
     language: 'en'
+)
 ```
 ##5. Put content in the campaign
 ```ruby
