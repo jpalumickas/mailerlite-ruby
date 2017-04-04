@@ -143,5 +143,12 @@ describe MailerLite::Clients::Groups do
     it 'has correct response' do
       expect(response).to eq({})
     end
+
+    it 'will escape the email' do
+      expect(client.connection)
+        .to receive(:delete)
+        .with('groups/1/subscribers/google%2Bstyle%40mailerlite.com').once
+      client.delete_group_subscriber(1, 'google+style@mailerlite.com')
+    end
   end
 end
