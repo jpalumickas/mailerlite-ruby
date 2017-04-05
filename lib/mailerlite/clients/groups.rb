@@ -96,8 +96,9 @@ module MailerLite
       #
       # @return [Hash] Response from API.
       def delete_group_subscriber(group_id, subscriber_id_or_email)
+        escaped_subscriber_id_or_email = CGI.escape(subscriber_id_or_email)
         connection.delete(
-          "groups/#{group_id}/subscribers/#{subscriber_id_or_email}"
+          "groups/#{group_id}/subscribers/#{escaped_subscriber_id_or_email}"
         )
       end
     end
