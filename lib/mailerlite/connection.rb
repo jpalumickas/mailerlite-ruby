@@ -2,6 +2,7 @@ require 'faraday'
 require 'faraday_middleware'
 require 'json'
 
+require 'mailerlite/mash'
 require 'mailerlite/middleware/raise_error'
 require 'mailerlite/middleware/underscore_keys'
 require 'mailerlite/middleware/fix_unparsed_json'
@@ -63,7 +64,7 @@ module MailerLite
         builder.request :json
 
         builder.use FaradayMiddleware::FollowRedirects
-        builder.use FaradayMiddleware::Mashify
+        builder.use FaradayMiddleware::Mashify, mash_class: MailerLite::Mash
         builder.use MailerLite::Middleware::UnderscoreKeys
         builder.use FaradayMiddleware::ParseJson
         builder.use MailerLite::Middleware::FixUnparsedJson
