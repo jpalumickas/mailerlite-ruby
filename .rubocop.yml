@@ -20,11 +20,15 @@ Style/MultilineMethodCallIndentation:
 
 Style/CaseIndentation:
   Enabled: true
-  IndentWhenRelativeTo: end
+  EnforcedStyle: end
 
 Lint/EndAlignment:
   Enabled: true
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - 'describe'

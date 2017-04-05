@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 group :development do
   gem 'guard-rspec', '~> 4.7'
-  gem 'rubocop', '~> 0.46'
+  gem 'rubocop', '~> 0.48'
 end
 
 group :development, :test do
@@ -14,7 +14,7 @@ group :test do
   gem 'coveralls', '~> 0.8', require: false
   gem 'rake' # For Travis CI
   gem 'rspec', '~> 3.5'
-  gem 'simplecov', '~> 0.12', require: false
+  gem 'simplecov', '~> 0.14', require: false
   gem 'webmock', '~> 2.3'
 end
 
