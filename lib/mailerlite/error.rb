@@ -34,7 +34,8 @@ module MailerLite
       return unless response.body.is_a?(Hash)
       return unless response.body['error']
 
-      response.body['error']['message'].presence
+      message = response.body['error']['message']
+      MailerLite::Utils.presence(message)
     end
   end
 
