@@ -66,9 +66,9 @@ module MailerLite
         builder.use FaradayMiddleware::FollowRedirects
         builder.use FaradayMiddleware::Mashify, mash_class: MailerLite::Mash
         builder.use MailerLite::Middleware::UnderscoreKeys
+        builder.use MailerLite::Middleware::RaiseError
         builder.use FaradayMiddleware::ParseJson
         builder.use MailerLite::Middleware::FixUnparsedJson
-        builder.use MailerLite::Middleware::RaiseError
 
         builder.adapter Faraday.default_adapter
       end

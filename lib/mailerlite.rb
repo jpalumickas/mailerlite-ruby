@@ -1,3 +1,4 @@
+require 'mailerlite/core_ext/object'
 require 'mailerlite/core_ext/string'
 
 require 'mailerlite/version'
