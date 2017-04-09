@@ -18,7 +18,8 @@ module MailerLite
 
       def underscore_hash_keys(hash)
         hash.each_with_object({}) do |(k, v), new_hash|
-          new_hash[k.underscore] = updated_response(v)
+          key = MailerLite::Utils.underscore(k.to_s)
+          new_hash[key] = updated_response(v)
         end
       end
     end

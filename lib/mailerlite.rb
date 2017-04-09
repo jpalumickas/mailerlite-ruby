@@ -1,6 +1,5 @@
-require 'mailerlite/core_ext/string'
-
 require 'mailerlite/version'
+require 'mailerlite/utils'
 require 'mailerlite/error'
 require 'mailerlite/client'
 

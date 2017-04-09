@@ -1,14 +1,19 @@
 module MailerLite
   # Base MailerLite error.
   class Error < StandardError
+    def initialize(msg = nil)
+      @message = msg
+    end
+
     # Returns the appropriate MailerLite::Error sublcass based on status and
     # response message.
     #
-    # @param response [Hash] HTTP response.
+    # @param response [Faraday::Env] HTTP response.
     #
     # @return [MailerLite::Error]
     def self.from_response(response)
-      status = response[:status].to_i
+      status = response.status.to_i
+      message = error_message(response)
 
       klass = case status
       when 400 then MailerLite::BadRequest
@@ -17,7 +22,20 @@ module MailerLite
       when 500 then MailerLite::InternalServerError
       end
 
-      klass.new if klass
+      klass.new(message) if klass
+    end
+
+    # Returns the appropriate MailerLite error message based on response
+    #
+    # @param response [Faraday::Env] HTTP response.
+    #
+    # @return [String] MailerLite error message.
+    def self.error_message(response)
+      return unless response.body.is_a?(Hash)
+      return unless response.body['error']
+
+      message = response.body['error']['message']
+      MailerLite::Utils.presence(message)
     end
   end
 
@@ -25,7 +43,7 @@ module MailerLite
   class BadRequest < Error
     # Default error message.
     def to_s
-      'Missing a required parameter or calling invalid method'
+      @message || 'Missing a required parameter or calling invalid method'
     end
   end
 
@@ -33,7 +51,7 @@ module MailerLite
   class Unauthorized < Error
     # Default error message.
     def to_s
-      'Invalid API key provided'
+      @message || 'Invalid API key provided'
     end
   end
 
@@ -41,7 +59,7 @@ module MailerLite
   class NotFound < Error
     # Default error message.
     def to_s
-      "Can't find requested items"
+      @message || "Can't find requested items"
     end
   end
 
@@ -49,7 +67,7 @@ module MailerLite
   class InternalServerError < Error
     # Default error message.
     def to_s
-      'The server encountered an unexpected condition'
+      @message || 'The server encountered an unexpected condition'
     end
   end
 end
