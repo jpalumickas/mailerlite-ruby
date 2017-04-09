@@ -32,12 +32,27 @@ You can find your API key in page: Integrations » Developer API.
 client = MailerLite::Client.new(api_key: 'my-secret-api-key')
 ```
 
+Example:
+
+```ruby
+client.campaigns
+```
+
 Or create file under `config/initializers/mailerlite.rb`
 
 ```ruby
 MailerLite.configure do |config|
   config.api_key = 'my-secret-api-key'
 end
+```
+
+When you configured global settings in file, then you can request methods
+on `MailerLite` class directly.
+
+Example:
+
+```ruby
+MailerLite.campaigns
 ```
 
 See more documentation in [examples][examples] directory.

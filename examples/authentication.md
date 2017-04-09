@@ -26,8 +26,8 @@ MailerLite.configure do |config|
 end
 ```
 
-When you configured in file, you can request methods on `MailerLite` class
-directly.
+When you configured global settings in file, then you can request methods
+on `MailerLite` class directly.
 
 Example:
 
