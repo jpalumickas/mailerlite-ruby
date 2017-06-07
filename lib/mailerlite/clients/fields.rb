@@ -4,7 +4,7 @@ module MailerLite
     module Fields
       # Get subscriber fields of account
       #
-      # @see https://developers.mailerlite.com/docs/all-fields
+      # @see https://developers.mailerlite.com/v2/reference#all-fields
       #
       # @return [Array] Response from API.
       def fields
@@ -13,7 +13,7 @@ module MailerLite
 
       # Create new custom field in account
       #
-      # @see https://developers.mailerlite.com/docs/create-field
+      # @see https://developers.mailerlite.com/v2/reference#create-field
       #
       # @param options [Hash] A customizable set of options.
       # @option options [String] :title Title of field
@@ -27,7 +27,7 @@ module MailerLite
 
       # Update custom field in account
       #
-      # @see https://developers.mailerlite.com/docs/update-field
+      # @see https://developers.mailerlite.com/v2/reference#update-field
       #
       # @param id [Integer] ID of field.
       # @param options [Hash] A customizable set of options.
@@ -40,7 +40,7 @@ module MailerLite
 
       # Remove custom field from account
       #
-      # @see https://developers.mailerlite.com/docs/remove-field
+      # @see https://developers.mailerlite.com/v2/reference#remove-field
       #
       # @param id [Integer] ID of field.
       #

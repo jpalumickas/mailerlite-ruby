@@ -39,7 +39,7 @@ describe MailerLite::Clients::Fields do
     end
   end
 
-  describe '#create_field' do
+  describe '#update_field' do
     before do
       stub_put_command(
         'fields/1', 'fields/update', title: 'Favourite Color'

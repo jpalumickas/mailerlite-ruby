@@ -4,7 +4,7 @@ module MailerLite
     module Groups
       # Get list of groups
       #
-      # @see https://developers.mailerlite.com/docs/groups
+      # @see https://developers.mailerlite.com/v2/reference#groups
       #
       # @return [Array] Response from API.
       def groups
@@ -13,7 +13,7 @@ module MailerLite
 
       # Get single group by ID
       #
-      # @see http://developers.mailerlite.com/reference#single-group
+      # @see https://developers.mailerlite.com/v2/reference#single-group
       #
       # @param id [Integer] Id of group
       #
@@ -25,7 +25,7 @@ module MailerLite
 
       # Create new group
       #
-      # @see http://developers.mailerlite.com/reference#create-group
+      # @see https://developers.mailerlite.com/v2/reference#create-group
       #
       # @param name [String] Name of your group
       #
@@ -34,13 +34,21 @@ module MailerLite
         connection.post('groups', name: name)
       end
 
+      # Update group
+      #
+      # @see https://developers.mailerlite.com/v2/reference#rename-group
+      #
+      # @param [Integer] Id of group
+      # @param options [Hash] Request options
+      #
+      # @return [Hash] Response from API.
       def update_group(id, options = {})
         connection.put("groups/#{id}", options)
       end
 
       # Remove group
       #
-      # @see http://developers.mailerlite.com/reference#delete-group
+      # @see https://developers.mailerlite.com/v2/reference#delete-group
       #
       # @param [Integer] Id of group
       #
@@ -51,7 +59,7 @@ module MailerLite
 
       # Get all subscribers in a specified group
       #
-      # @see http://developers.mailerlite.com/reference#subscribers-in-a-group
+      # @see https://developers.mailerlite.com/v2/reference#subscribers-in-a-group
       #
       # @param group_id [Integer] Id of group
       # @param options [Hash] Request options
@@ -63,7 +71,7 @@ module MailerLite
 
       # Add new single subscriber to specified group
       #
-      # @see http://developers.mailerlite.com/reference#add-single-subscriber
+      # @see https://developers.mailerlite.com/v2/reference#add-single-subscriber
       #
       # @param group_id [Integer] Id of group
       # @param options [Hash] Request options
@@ -75,7 +83,7 @@ module MailerLite
 
       # Add many new subscribers to specified group at once
       #
-      # @see http://developers.mailerlite.com/reference#add-many-subscribers
+      # @see https://developers.mailerlite.com/v2/reference#add-many-subscribers
       #
       # @param group_id [Integer] Id of group
       # @param subscribers [Array] Array of hash each indicates a subscriber
@@ -89,7 +97,7 @@ module MailerLite
 
       # Remove single subscriber from specified group
       #
-      # @see http://developers.mailerlite.com/reference#remove-subscriber
+      # @see https://developers.mailerlite.com/v2/reference#remove-subscriber
       #
       # @param group_id [Integer|String] Id of group
       # @param subscriber_id_or_email [Array] Id or email of subscriber

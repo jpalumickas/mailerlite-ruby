@@ -4,7 +4,7 @@ module MailerLite
     module Subscribers
       # Get single subscriber
       #
-      # @see https://developers.mailerlite.com/docs/single-subscriber
+      # @see https://developers.mailerlite.com/v2/reference#single-subscriber
       #
       # @param identifier [Integer,String] ID or email of subscriber.
       #
@@ -15,7 +15,7 @@ module MailerLite
 
       # Update single subscriber
       #
-      # @see https://developers.mailerlite.com/docs/update-subscriber
+      # @see https://developers.mailerlite.com/v2/reference#update-subscriber
       #
       # @param identifier [Integer,String] ID or email of subscriber.
       # @param options [Hash] A customizable set of options.
@@ -32,7 +32,7 @@ module MailerLite
 
       # Search for subscribers
       #
-      # @see https://developers.mailerlite.com/docs/search-for-subscribers
+      # @see https://developers.mailerlite.com/v2/reference#search-for-subscribers
       #
       # @param query [String] Search query
       # @param options [Hash] A customizable set of options.
@@ -48,7 +48,7 @@ module MailerLite
 
       # Get groups subscriber belongs to
       #
-      # @see https://developers.mailerlite.com/docs/groups-subscriber-belongs-to
+      # @see https://developers.mailerlite.com/v2/reference#groups-subscriber-belongs-to
       #
       # @param identifier [Integer,String] ID or email of subscriber.
       #
@@ -59,7 +59,7 @@ module MailerLite
 
       # Get activity (clicks, opens, etc) of selected subscriber
       #
-      # @see https://developers.mailerlite.com/docs/activity-of-single-subscriber
+      # @see https://developers.mailerlite.com/v2/reference#activity-of-single-subscriber
       #
       # @param identifier [Integer,String] ID or email of subscriber.
       #

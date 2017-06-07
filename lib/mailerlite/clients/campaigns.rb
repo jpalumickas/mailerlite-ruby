@@ -4,7 +4,7 @@ module MailerLite
     module Campaigns
       # Create campaign where you will use your custom HTML template
       #
-      # @see https://developers.mailerlite.com/docs/campaigns
+      # @see https://developers.mailerlite.com/v2/reference#campaigns
       #
       # @param options [Hash] A customizable set of options.
       # @option options [String] :type Type of campaign. Available values:
@@ -24,7 +24,7 @@ module MailerLite
 
       # Upload your HTML template to created campaign
       #
-      # @see https://developers.mailerlite.com/docs/put-custom-content-to-campaign
+      # @see https://developers.mailerlite.com/v2/reference#put-custom-content-to-campaign
       #
       # @param id [Integer] ID of campaign
       # @param options [Hash] A customizable set of options.
@@ -40,7 +40,7 @@ module MailerLite
 
       # Send, schedule or cancel campaign
       #
-      # @see https://developers.mailerlite.com/docs/campaign-actions-and-triggers
+      # @see https://developers.mailerlite.com/v2/reference#campaign-actions-and-triggers
       #
       # @param id [Integer] ID of campaign
       # @param action [String] Action type. Possible values: send, cancel
@@ -53,7 +53,7 @@ module MailerLite
       # Returns all campaigns you have in your account by :status which is
       # required. Also basic summary for each campaign including the ID.
       #
-      # @see http://developers.mailerlite.com/reference#campaigns-by-type
+      # @see https://developers.mailerlite.com/v2/reference#campaigns-by-type
       #
       # @param status [String] possible values: 'sent', 'outbox', 'draft'
       # no value means 'sent'
@@ -64,6 +64,8 @@ module MailerLite
       end
 
       # Remove a campaign.
+      #
+      # @see https://developers.mailerlite.com/v2/reference#delete-campaign
       #
       # @param id [Integer] id of campaign
       #
