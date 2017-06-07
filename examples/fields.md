@@ -16,10 +16,11 @@ client.create_field(options)
 ## Update custom field in account
 
 ```ruby
-client.update_field(id, { title: 'New title' })
+client.update_field(id, title: 'New title')
 ```
 
-##Remove custom field from account
+## Remove custom field from account
+
 ```ruby
 client.delete_field(id)
 ```
