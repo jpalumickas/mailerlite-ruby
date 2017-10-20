@@ -15,15 +15,18 @@ module MailerLite
       status = response.status.to_i
       message = error_message(response)
 
-      klass = case status
+      klass = error_class(status)
+      klass.new(message) if klass
+    end
+
+    def self.error_class(status)
+      case status
       when 400 then MailerLite::BadRequest
       when 401 then MailerLite::Unauthorized
       when 404 then MailerLite::NotFound
       when 429 then MailerLite::TooManyRequests
       when 500 then MailerLite::InternalServerError
       end
-
-      klass.new(message) if klass
     end
 
     # Returns the appropriate MailerLite error message based on response

@@ -26,7 +26,7 @@ describe MailerLite::Error do
     it 'has too many requests error raised when status is 429' do
       response = double(status: 429, body: [])
       expect { raise MailerLite::Error.from_response(response) }
-        .to raise_error(MailerLite::TooManyRequests, "Too Many Requests")
+        .to raise_error(MailerLite::TooManyRequests, 'Too Many Requests')
     end
 
     it 'has internal server error raised when status is 500' do
