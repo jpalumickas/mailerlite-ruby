@@ -4,22 +4,19 @@ AllCops:
     - '**/Rakefile'
     - '**/Gemfile'
 
-Style/Documentation:
-  Enabled: false
-
-Style/AlignParameters:
+Layout/AlignParameters:
   Enabled: true
   EnforcedStyle: with_fixed_indentation
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: true
   EnforcedStyle: indented
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 
-Style/CaseIndentation:
+Layout/CaseIndentation:
   Enabled: true
   EnforcedStyle: end
 
@@ -27,13 +24,16 @@ Lint/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
 
+Metrics/BlockLength:
+  ExcludedMethods:
+    - 'describe'
+
+Style/Documentation:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/DoubleNegation:
   Exclude:
     - 'lib/mailerlite/utils.rb'
-
-Metrics/BlockLength:
-  ExcludedMethods:
-    - 'describe'
