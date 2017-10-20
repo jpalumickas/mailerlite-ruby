@@ -23,6 +23,12 @@ describe MailerLite::Error do
         .to raise_error(MailerLite::NotFound, "Can't find requested items")
     end
 
+    it 'has too many requests error raised when status is 429' do
+      response = double(status: 429, body: [])
+      expect { raise MailerLite::Error.from_response(response) }
+        .to raise_error(MailerLite::TooManyRequests, "Too Many Requests")
+    end
+
     it 'has internal server error raised when status is 500' do
       response = double(status: 500, body: [])
       expect { raise MailerLite::Error.from_response(response) }

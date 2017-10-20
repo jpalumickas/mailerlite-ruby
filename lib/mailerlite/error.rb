@@ -19,6 +19,7 @@ module MailerLite
       when 400 then MailerLite::BadRequest
       when 401 then MailerLite::Unauthorized
       when 404 then MailerLite::NotFound
+      when 429 then MailerLite::TooManyRequests
       when 500 then MailerLite::InternalServerError
       end
 
@@ -68,6 +69,14 @@ module MailerLite
     # Default error message.
     def to_s
       @message || 'The server encountered an unexpected condition'
+    end
+  end
+
+  # Raised when MailerLite returns a 429 HTTP status code
+  class TooManyRequests < Error
+    # Default error message.
+    def to_s
+      @message || 'Too Many Requests'
     end
   end
 end
