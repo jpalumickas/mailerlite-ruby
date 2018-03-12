@@ -1,0 +1,16 @@
+{
+    "account": {
+        "email": "dummy@mailerlite.com",
+        "from": "dummy@mailerlite.com",
+        "id": 1,
+        "name": "Dummy",
+        "subdomain": "dummy",
+        "timezone": {
+            "gmt": "+02:00",
+            "id": 101,
+            "time": 120,
+            "timezone": "",
+            "title": ""
+        }
+    }
+}

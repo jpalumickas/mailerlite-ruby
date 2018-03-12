@@ -1,6 +1,7 @@
 require 'mailerlite/connection'
 require 'mailerlite/configuration'
 
+require 'mailerlite/clients/account'
 require 'mailerlite/clients/campaigns'
 require 'mailerlite/clients/fields'
 require 'mailerlite/clients/groups'
@@ -10,6 +11,7 @@ require 'mailerlite/clients/webhooks'
 module MailerLite
   # Wrapper class for all actions.
   class Client
+    include MailerLite::Clients::Account
     include MailerLite::Clients::Campaigns
     include MailerLite::Clients::Fields
     include MailerLite::Clients::Groups

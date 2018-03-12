@@ -3,6 +3,7 @@
 ## Documentation
 
 * [Authentication](authentication.md)
+* [Account](account.md)
 * [Campaigns](campaigns.md)
 * [Fields](fields.md)
 * [Groups](groups.md)
