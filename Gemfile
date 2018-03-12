@@ -13,10 +13,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'coveralls', '~> 0.8', require: false
   gem 'rake' # For Travis CI
   gem 'rspec', '~> 3.7'
-  gem 'simplecov', '~> 0.14', require: false
+  gem 'simplecov', '~> 0.15', require: false
   gem 'webmock', '~> 2.3'
 end
 
