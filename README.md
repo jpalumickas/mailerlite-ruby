@@ -2,11 +2,11 @@
 
 A Ruby gem which helps to communicate with [MailerLite][mailerlite] API.
 
-[![Gem Version](http://img.shields.io/gem/v/mailerlite.svg?style=flat-square)][rubygems]
-[![Build Status](http://img.shields.io/travis/jpalumickas/mailerlite-ruby.svg?style=flat-square)][travis]
-[![Dependency Status](http://img.shields.io/gemnasium/jpalumickas/mailerlite-ruby.svg?style=flat-square)][gemnasium]
-[![Coverage Status](http://img.shields.io/coveralls/jpalumickas/mailerlite-ruby/master.svg?style=flat-square)][coveralls]
-[![Code Climate](http://img.shields.io/codeclimate/github/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate]
+[![Gem Version](https://img.shields.io/gem/v/mailerlite.svg?style=flat-square)][rubygems]
+[![Build Status](https://img.shields.io/travis/jpalumickas/mailerlite-ruby.svg?style=flat-square)][travis]
+[![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/mailerlite-ruby.svg?style=flat-square)][gemnasium]
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate]
+[![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate_coverage]
 
 ## Installation
 
@@ -69,13 +69,13 @@ implementations:
 * Ruby 2.5.0
 
 ## Copyright
-Copyright (c) 2017 Justas Palumickas. See [LICENSE][license] for details.
+Copyright (c) 2018 Justas Palumickas. See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/mailerlite
-[travis]: http://travis-ci.org/jpalumickas/mailerlite-ruby
+[travis]: https://travis-ci.org/jpalumickas/mailerlite-ruby
 [gemnasium]: https://gemnasium.com/jpalumickas/mailerlite-ruby
-[coveralls]: https://coveralls.io/r/jpalumickas/mailerlite-ruby
 [codeclimate]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby
+[codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby/test_coverage
 
 [license]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/LICENSE
 [create_a_campaign]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/examples/create_campaign.md

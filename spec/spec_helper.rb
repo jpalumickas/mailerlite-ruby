@@ -11,7 +11,7 @@ SimpleCov.start
 require 'mailerlite'
 require 'webmock/rspec'
 
-WebMock.disable_net_connect!(allow: ['coveralls.io', 'codeclimate.com'])
+WebMock.disable_net_connect!(allow: ['codeclimate.com'])
 
 def fixtures_dir
   File.expand_path('fixtures', __dir__)
