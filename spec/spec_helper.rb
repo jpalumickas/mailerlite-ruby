@@ -1,12 +1,9 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'simplecov'
-require 'coveralls'
-require 'codeclimate-test-reporter'
 
 SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
+  SimpleCov::Formatter::HTMLFormatter
 ]
 
 SimpleCov.start
@@ -17,7 +14,7 @@ require 'webmock/rspec'
 WebMock.disable_net_connect!(allow: ['coveralls.io', 'codeclimate.com'])
 
 def fixtures_dir
-  File.expand_path('../fixtures', __FILE__)
+  File.expand_path('fixtures', __dir__)
 end
 
 def fixture(file)
