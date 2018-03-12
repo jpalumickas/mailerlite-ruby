@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'jpalumickas-rubocop-config',
-    git: 'https://github.com/jpalumickas/rubocop-config.git',
-    require: false
   gem 'rubocop', '~> 0.53'
 end
 

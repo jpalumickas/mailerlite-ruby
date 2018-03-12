@@ -1,13 +1,39 @@
-inherit_gem:
-  jpalumickas-rubocop-config:
-    - "config/rubocop.yml"
-
 AllCops:
   TargetRubyVersion: 2.1
   Include:
     - '**/Rakefile'
     - '**/Gemfile'
 
+Layout/AlignParameters:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/CaseIndentation:
+  Enabled: true
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
 Style/DoubleNegation:
   Exclude:
     - 'lib/mailerlite/utils.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
