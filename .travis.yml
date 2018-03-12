@@ -6,7 +6,7 @@ cache:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
+    - CC_TEST_REPORTER_ID=1da21a01a5e29b3624aa81523fe36983a2b8d785f18046de30c17e1b6da1563a
 
 language: ruby
 rvm:
