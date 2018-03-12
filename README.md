@@ -62,11 +62,11 @@ See more documentation in [examples][examples] directory.
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* Ruby 2.0.0
 * Ruby 2.1.0
 * Ruby 2.2.0
 * Ruby 2.3.0
 * Ruby 2.4.0
+* Ruby 2.5.0
 
 ## Copyright
 Copyright (c) 2017 Justas Palumickas. See [LICENSE][license] for details.
