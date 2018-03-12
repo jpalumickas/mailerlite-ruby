@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'guard-rspec', '~> 4.7'
   gem 'jpalumickas-rubocop-config',
     git: 'https://github.com/jpalumickas/rubocop-config.git',
     require: false
