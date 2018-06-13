@@ -13,6 +13,20 @@ module MailerLite
         connection.get("subscribers/#{identifier}")
       end
 
+      # Create subscriber
+      #
+      # @see https://developers.mailerlite.com/v2/reference#create-a-subscriber
+      #
+      # @param identifier [Integer,String] ID or email of subscriber.
+      # @param params [Hash] Params list. See more in MailerLite docs.
+      # @option options [String] :email Required. Email of new subscriber.
+      # @option options [String] :name Subscriber name.
+      #
+      # @return [Hash] Response from API.
+      def create_subscriber(params = {})
+        connection.post('subscribers', params)
+      end
+
       # Update single subscriber
       #
       # @see https://developers.mailerlite.com/v2/reference#update-subscriber

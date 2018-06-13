@@ -17,6 +17,31 @@ describe MailerLite::Clients::Subscribers do
     end
   end
 
+  describe '#create_subscriber' do
+    before do
+      stub_post_command(
+        'subscribers', 'subscribers/create',
+        email: 'demo@mailerlite.com', name: 'John'
+
+      )
+    end
+
+    let(:response) do
+      client.create_subscriber(
+        email: 'demo@mailerlite.com',
+        name: 'John'
+      )
+    end
+
+    it 'has correct subscriber email' do
+      expect(response.email).to eq('demo@mailerlite.com')
+    end
+
+    it 'has correct subscriber name' do
+      expect(response.name).to eq('John')
+    end
+  end
+
   describe '#update_subscriber' do
     before do
       stub_put_command(

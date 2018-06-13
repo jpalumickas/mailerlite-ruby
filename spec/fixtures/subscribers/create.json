@@ -1,0 +1,60 @@
+{
+  "id": 1343965485,
+  "name": "John",
+  "email": "demo@mailerlite.com",
+  "sent": 0,
+  "opened": 0,
+  "clicked": 0,
+  "type": "active",
+  "fields": [
+    {
+      "key": "email",
+      "value": "demo@mailerlite.com",
+      "type": "TEXT"
+    },
+    {
+      "key": "name",
+      "value": "John",
+      "type": "TEXT"
+    },
+    {
+      "key": "last_name",
+      "value": "",
+      "type": "TEXT"
+    },
+    {
+      "key": "company",
+      "value": "MailerLite",
+      "type": "TEXT"
+    },
+    {
+      "key": "country",
+      "value": "",
+      "type": "TEXT"
+    },
+    {
+      "key": "city",
+      "value": "",
+      "type": "TEXT"
+    },
+    {
+      "key": "phone",
+      "value": "",
+      "type": "TEXT"
+    },
+    {
+      "key": "state",
+      "value": "",
+      "type": "TEXT"
+    },
+    {
+      "key": "zip",
+      "value": "",
+      "type": "TEXT"
+    }
+  ],
+  "date_subscribe": null,
+  "date_unsubscribe": null,
+  "date_created": "2016-04-04 12:00:00",
+  "date_updated": "2016-04-04 12:00:00"
+}
