@@ -4,7 +4,6 @@ A Ruby gem which helps to communicate with [MailerLite][mailerlite] API.
 
 [![Gem Version](https://img.shields.io/gem/v/mailerlite.svg?style=flat-square)][rubygems]
 [![Build Status](https://img.shields.io/travis/jpalumickas/mailerlite-ruby.svg?style=flat-square)][travis]
-[![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/mailerlite-ruby.svg?style=flat-square)][gemnasium]
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate]
 [![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate_coverage]
 
@@ -73,7 +72,6 @@ Copyright (c) 2018 Justas Palumickas. See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/mailerlite
 [travis]: https://travis-ci.org/jpalumickas/mailerlite-ruby
-[gemnasium]: https://gemnasium.com/jpalumickas/mailerlite-ruby
 [codeclimate]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby
 [codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby/test_coverage
 
