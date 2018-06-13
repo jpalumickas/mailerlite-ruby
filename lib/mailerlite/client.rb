@@ -5,6 +5,7 @@ require 'mailerlite/clients/account'
 require 'mailerlite/clients/campaigns'
 require 'mailerlite/clients/fields'
 require 'mailerlite/clients/groups'
+require 'mailerlite/clients/segments'
 require 'mailerlite/clients/subscribers'
 require 'mailerlite/clients/webhooks'
 
@@ -15,6 +16,7 @@ module MailerLite
     include MailerLite::Clients::Campaigns
     include MailerLite::Clients::Fields
     include MailerLite::Clients::Groups
+    include MailerLite::Clients::Segments
     include MailerLite::Clients::Subscribers
     include MailerLite::Clients::Webhooks
 
