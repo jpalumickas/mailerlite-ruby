@@ -22,7 +22,6 @@ describe MailerLite::Clients::Subscribers do
       stub_post_command(
         'subscribers', 'subscribers/create',
         email: 'demo@mailerlite.com', name: 'John'
-
       )
     end
 

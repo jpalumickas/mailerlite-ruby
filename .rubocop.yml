@@ -1,8 +1,5 @@
 AllCops:
   TargetRubyVersion: 2.1
-  Include:
-    - '**/Rakefile'
-    - '**/Gemfile'
 
 Layout/AlignParameters:
   Enabled: true
