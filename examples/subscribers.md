@@ -12,6 +12,12 @@ or with email
 client.subscriber('user@example.com')
 ```
 
+## Create subscriber
+
+```ruby
+client.create_subscriber(email: 'john@example.com', name: 'John Smith')
+```
+
 ## Update single subscriber
 
 ```ruby
