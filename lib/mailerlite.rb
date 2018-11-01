@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mailerlite/version'
 require 'mailerlite/utils'
 require 'mailerlite/error'
