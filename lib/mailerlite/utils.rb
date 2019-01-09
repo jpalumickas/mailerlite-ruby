@@ -2,7 +2,7 @@
 
 module MailerLite
   module Utils
-    BLANK_RE = /\A[[:space:]]*\z/
+    BLANK_RE = /\A[[:space:]]*\z/.freeze
 
     class << self
       def underscore(string)
