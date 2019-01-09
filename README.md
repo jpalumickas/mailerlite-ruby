@@ -66,9 +66,10 @@ implementations:
 * Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
+* Ruby 2.6.0
 
 ## Copyright
-Copyright (c) 2018 Justas Palumickas. See [LICENSE][license] for details.
+Copyright (c) 2019 Justas Palumickas. See [LICENSE][license] for details.
 
 [rubygems]: https://rubygems.org/gems/mailerlite
 [travis]: https://travis-ci.org/jpalumickas/mailerlite-ruby
