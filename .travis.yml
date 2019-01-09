@@ -18,7 +18,12 @@ rvm:
   - ruby-head
 
 before_install:
-  - gem update --system
+  - gem install bundler -v '< 2'
+
+# After dropping support for Ruby 2.2, use:
+# before_install:
+#   - gem update --system
+#   - gem install bundler
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
