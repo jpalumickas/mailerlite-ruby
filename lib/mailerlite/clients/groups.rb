@@ -8,9 +8,14 @@ module MailerLite
       #
       # @see https://developers.mailerlite.com/v2/reference#groups
       #
+      # @param options [Hash] Options list. See more in MailerLite docs.
+      # @option options [Integer] :offset
+      # @option options [Integer] :limit
+      # @option options [String] :filters
+      #
       # @return [Array] Response from API.
-      def groups
-        connection.get('groups')
+      def groups(options = {})
+        connection.get('groups', options)
       end
 
       # Get single group by ID

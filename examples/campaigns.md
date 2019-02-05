@@ -24,6 +24,13 @@ client.campaign_action(id, action)
 client.campaign_by_status(status)
 ```
 
+with options
+
+```ruby
+client.campaign_by_status(:sent, order: :desc, limit: 5, offset: 10)
+```
+
+
 ## Remove a campaign
 
 ```ruby

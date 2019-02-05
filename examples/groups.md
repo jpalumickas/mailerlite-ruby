@@ -6,6 +6,12 @@
 client.groups
 ```
 
+with options
+
+```ruby
+client.groups(limit: 5, offset: 10)
+```
+
 ## Get single group by ID
 
 ```ruby

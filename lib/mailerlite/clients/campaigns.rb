@@ -59,10 +59,14 @@ module MailerLite
       #
       # @param status [String] possible values: 'sent', 'outbox', 'draft'
       # no value means 'sent'
+      # @param options [Hash] Options list. See more in MailerLite docs.
+      # @option options [Integer] :offset
+      # @option options [Integer] :limit
+      # @option options [String] :order asc or desc
       #
       # @return Response from API.
-      def campaigns_by_status(status)
-        connection.get("campaigns/#{status}")
+      def campaigns_by_status(status, options = {})
+        connection.get("campaigns/#{status}", options)
       end
 
       # Remove a campaign.
