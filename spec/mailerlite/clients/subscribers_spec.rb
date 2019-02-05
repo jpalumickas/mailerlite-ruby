@@ -3,6 +3,16 @@ require 'spec_helper'
 describe MailerLite::Clients::Subscribers do
   let(:client) { MailerLite::Client.new(api_key: 'test_key') }
 
+  describe '#subscribers' do
+    before { stub_get_command('subscribers', 'subscribers/list') }
+
+    let(:response) { client.subscribers }
+
+    it 'has correct first subscriber email' do
+      expect(response[0].email).to eq('demo@mailerlite.com')
+    end
+  end
+
   describe '#subscriber' do
     before do
       stub_get_command(
