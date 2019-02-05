@@ -1,5 +1,17 @@
 # Subscribers
 
+## Get all subscribers
+
+```ruby
+client.subscribers
+```
+
+with options
+
+```ruby
+client.subscribers(limit: 5, offset: 10)
+```
+
 ## Get single subscriber
 
 ```ruby

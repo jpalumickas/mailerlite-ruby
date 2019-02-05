@@ -4,6 +4,19 @@ module MailerLite
   module Clients
     # MailerLite Subscribers
     module Subscribers
+      # Get subscribers
+      #
+      # @see https://developers.mailerlite.com/v2/reference#subscribers
+      #
+      # @param options [Hash] Options list. See more in MailerLite docs.
+      # @option options [Integer] :offset
+      # @option options [Integer] :limit
+      #
+      # @return [Hash] Response from API.
+      def subscribers(options = {})
+        connection.get('subscribers', options)
+      end
+
       # Get single subscriber
       #
       # @see https://developers.mailerlite.com/v2/reference#single-subscriber

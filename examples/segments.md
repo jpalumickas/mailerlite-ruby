@@ -5,3 +5,9 @@
 ```ruby
 client.segments
 ```
+
+with options
+
+```ruby
+client.segments(limit: 5, offset: 10, order: :desc)
+```
