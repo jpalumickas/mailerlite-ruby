@@ -14,6 +14,13 @@ Gem::Specification.new do |spec|
   spec.description   = 'Ruby gem for MailerLite API v2'
   spec.homepage      = 'https://github.com/jpalumickas/mailerlite-ruby'
 
+  s.metadata = {
+    'bug_tracker_uri' => 'https://github.com/jpalumickas/mailerlite-ruby/issues',
+    'changelog_uri' => 'https://github.com/jpalumickas/mailerlite-ruby/releases',
+    'documentation_uri' => 'https://github.com/jpalumickas/mailerlite-ruby/tree/master/examples',
+    'source_code_uri' => 'https://github.com/jpalumickas/mailerlite-ruby'
+  }
+
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`
