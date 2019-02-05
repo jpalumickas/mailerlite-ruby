@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'rubocop', '~> 0.62'
+  gem 'rubocop', '~> 0.63'
 end
 
 group :development, :test do
