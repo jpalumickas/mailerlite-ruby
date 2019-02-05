@@ -2,5 +2,5 @@
 
 module MailerLite
   # @return [String] Version number.
-  VERSION = '1.7.0'.freeze
+  VERSION = '1.8.0'.freeze
 end
