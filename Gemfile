@@ -10,7 +10,6 @@ end
 
 group :test do
   gem 'codecov', require: false
-  gem 'rake' # For Travis CI
   gem 'rspec', '~> 3.8'
   gem 'simplecov', '~> 0.17', require: false
   gem 'webmock', '~> 3.7'
