@@ -11,7 +11,7 @@ module MailerLite
       # @return [Hash] Response from API.
       def account
         result = connection.get('me')
-        result && result.account
+        result&.account
       end
 
       # Get account information.

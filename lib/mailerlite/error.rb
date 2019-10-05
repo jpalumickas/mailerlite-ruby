@@ -18,7 +18,7 @@ module MailerLite
       message = error_message(response)
 
       klass = error_class(status)
-      klass.new(message) if klass
+      klass&.new(message)
     end
 
     def self.error_class(status)

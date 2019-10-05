@@ -4,10 +4,10 @@ module MailerLite
   # A class responsible for all configurations.
   class Configuration
     # Default API endpoint.
-    API_ENDPOINT = 'https://api.mailerlite.com/api/v2'.freeze
+    API_ENDPOINT = 'https://api.mailerlite.com/api/v2'
 
     # Default User Agent header string.
-    USER_AGENT = "MailerLite Ruby v#{MailerLite::VERSION}".freeze
+    USER_AGENT = "MailerLite Ruby v#{MailerLite::VERSION}"
 
     attr_accessor :api_key
     attr_writer :url, :user_agent
