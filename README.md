@@ -3,9 +3,7 @@
 A Ruby gem which helps to communicate with [MailerLite][mailerlite] API.
 
 [![Gem Version](https://img.shields.io/gem/v/mailerlite.svg?style=flat-square)][rubygems]
-[![Build Status](https://img.shields.io/travis/jpalumickas/mailerlite-ruby.svg?style=flat-square)][travis]
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate]
-[![Test Coverage](https://img.shields.io/codeclimate/c/jpalumickas/mailerlite-ruby.svg?style=flat-square)][codeclimate_coverage]
+[![Coverage Status](https://img.shields.io/codecov/c/github/jpalumickas/mailerlite-ruby?style=flat-square)][codecov]
 
 ## Installation
 
@@ -58,22 +56,20 @@ See more documentation in [examples][examples] directory.
 
 ## Supported Ruby Versions
 
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is [tested against][github_actions] the following Ruby
 implementations:
 
-* Ruby 2.2.0
 * Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
 
 ## Copyright
-Copyright (c) 2019 Justas Palumickas. See [LICENSE][license] for details.
+Copyright (c) 2019 Justas Palumickas. See [LICENSE][github_actions] for details.
 
 [rubygems]: https://rubygems.org/gems/mailerlite
-[travis]: https://travis-ci.org/jpalumickas/mailerlite-ruby
-[codeclimate]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby
-[codeclimate_coverage]: https://codeclimate.com/github/jpalumickas/mailerlite-ruby/test_coverage
+[codecov]: https://codecov.io/gh/jpalumickas/mailerlite-ruby
+[github_actions]: https://github.com/jpalumickas/mailerlite-ruby/actions
 
 [license]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/LICENSE
 [create_a_campaign]: https://raw.githubusercontent.com/jpalumickas/mailerlite-ruby/master/examples/create_campaign.md
