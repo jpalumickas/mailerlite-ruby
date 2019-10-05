@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
-
 require 'simplecov'
+require 'codecov'
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter
-]
-
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::Codecov,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
+)
 SimpleCov.start
+
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'mailerlite'
 require 'webmock/rspec'
