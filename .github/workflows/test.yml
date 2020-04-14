@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   test:
+    name: Test
     strategy:
       matrix:
         ruby: [2.4, 2.5, 2.6, 2.7]
@@ -16,10 +17,30 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Build and test with Rake
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - name: Install dependencies
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3 --without development
+    - name: RSpec
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: |
         bundle exec rspec
+
+  rubocop:
+    name: RuboCop
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3 --without development
+    - name: RuboCop
+      run: |
+        bundle exec rubocop
