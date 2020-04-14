@@ -1,7 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.4
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: true
   EnforcedStyle: with_fixed_indentation
 
@@ -33,4 +33,5 @@ Style/DoubleNegation:
 
 Metrics/BlockLength:
   Exclude:
+    - '*.gemspec'
     - 'spec/**/*_spec.rb'
