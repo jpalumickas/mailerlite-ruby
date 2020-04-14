@@ -59,13 +59,13 @@ See more documentation in [examples][examples] directory.
 This library aims to support and is [tested against][github_actions] the following Ruby
 implementations:
 
-* Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
+* Ruby 2.7.0
 
 ## Copyright
-Copyright (c) 2019 Justas Palumickas. See [LICENSE][github_actions] for details.
+Copyright (c) 2020 Justas Palumickas. See [LICENSE][github_actions] for details.
 
 [rubygems]: https://rubygems.org/gems/mailerlite
 [codecov]: https://codecov.io/gh/jpalumickas/mailerlite-ruby
