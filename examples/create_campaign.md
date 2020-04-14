@@ -33,8 +33,8 @@ html = "<div>Welcome,<br /><a href=\"{$unsubscribe}\">Unsubscribe</a></div>"
 plain_text = 'Welcome, {$unsubscribe} {$url}'
 client.update_campaign_content(campaign.id, html: html, plain: plain_text )
 ```
-`${url}` must be exist in plain text.
-`${unsubscribe}` must be exist in both plain text and html. See the [API documentation](http://developers.mailerlite.com/reference#put-custom-content-to-campaign).
+`{$url}` must be exist in plain text.
+`{$unsubscribe}` must be exist in both plain text and html. See the [API documentation](http://developers.mailerlite.com/reference#put-custom-content-to-campaign).
 
 ##6. Send the campaign
 ```ruby
