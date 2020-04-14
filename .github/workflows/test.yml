@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3 --without development
+        bundle install --jobs 4 --retry 3
     - name: RSpec
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -40,7 +40,7 @@ jobs:
     - name: Install dependencies
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3 --without development
+        bundle install --jobs 4 --retry 3
     - name: RuboCop
       run: |
         bundle exec rubocop
