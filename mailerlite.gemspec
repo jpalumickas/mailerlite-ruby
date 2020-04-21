@@ -32,15 +32,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.4.0'
 
-  spec.add_dependency 'faraday', '~> 0.10'
-  spec.add_dependency 'faraday_middleware', '~> 0.10'
+  spec.add_dependency 'faraday', '~> 1.0', '>= 1.0.1'
+  spec.add_dependency 'faraday_middleware', '~> 1.0'
   spec.add_dependency 'hashie', '>= 3.5.5'
 
   spec.add_development_dependency 'codecov', '~> 0.1'
   spec.add_development_dependency 'pry', '~> 0.13'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.9'
-  spec.add_development_dependency 'rubocop', '~> 0.81'
+  spec.add_development_dependency 'rubocop', '~> 0.82'
   spec.add_development_dependency 'simplecov', '~> 0.18'
   spec.add_development_dependency 'webmock', '~> 3.8'
 end
