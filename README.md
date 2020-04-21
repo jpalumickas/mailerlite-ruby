@@ -59,7 +59,6 @@ See more documentation in [examples][examples] directory.
 This library aims to support and is [tested against][github_actions] the following Ruby
 implementations:
 
-* Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
 * Ruby 2.7.0
