@@ -32,7 +32,7 @@ client = MailerLite::Client.new(api_key: 'my-secret-api-key')
 Example:
 
 ```ruby
-client.campaigns
+client.groups
 ```
 
 Or create file under `config/initializers/mailerlite.rb`

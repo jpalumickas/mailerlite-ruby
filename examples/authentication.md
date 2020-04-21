@@ -13,7 +13,7 @@ client = MailerLite::Client.new(api_key: 'my-secret-api-key')
 Example:
 
 ```ruby
-client.campaigns
+client.groups
 ```
 
 ## Using global class config
@@ -32,7 +32,7 @@ on `MailerLite` class directly.
 Example:
 
 ```ruby
-MailerLite.campaigns
+MailerLite.groups
 ```
 
 [mailerlite]: https://www.mailerlite.com
