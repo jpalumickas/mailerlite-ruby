@@ -40,6 +40,7 @@ Or create file under `config/initializers/mailerlite.rb`
 ```ruby
 MailerLite.configure do |config|
   config.api_key = 'my-secret-api-key'
+  # config.timeout = 10
 end
 ```
 
