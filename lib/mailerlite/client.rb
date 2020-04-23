@@ -26,8 +26,11 @@ module MailerLite
     #
     # @param options [Hash] A customizable set of options.
     # @option options [String] :api_key API Key provider from MailerLite.
+    # @option options [String] :timeout optional open/read timeout Integer in
+    #   seconds
     def initialize(options = {})
       config.api_key = options[:api_key] if options[:api_key]
+      config.timeout = options[:timeout] if options[:timeout]
     end
 
     # @return [Configuration]
