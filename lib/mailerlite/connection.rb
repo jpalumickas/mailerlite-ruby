@@ -57,6 +57,8 @@ module MailerLite
         url: client.config.url,
         builder: middleware
       }
+      timeout = client.config.timeout
+      conn_opts[:request] = { timeout: timeout } unless timeout.nil?
 
       Faraday.new(conn_opts)
     end

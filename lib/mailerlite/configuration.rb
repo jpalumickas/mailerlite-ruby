@@ -9,7 +9,7 @@ module MailerLite
     # Default User Agent header string.
     USER_AGENT = "MailerLite Ruby v#{MailerLite::VERSION}"
 
-    attr_accessor :api_key
+    attr_accessor :api_key, :timeout
     attr_writer :url, :user_agent
 
     # Takes url provided from configuration or uses default one.

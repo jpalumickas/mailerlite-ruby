@@ -23,11 +23,16 @@ describe MailerLite::Client do
     before do
       client.configure do |config|
         config.api_key = 'new_key'
+        config.timeout = 10
       end
     end
 
     it 'has correct api key' do
       expect(client.config.api_key).to eq('new_key')
+    end
+
+    it 'has correct timeout value' do
+      expect(client.config.timeout).to eq(10)
     end
   end
 end
