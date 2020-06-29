@@ -37,15 +37,9 @@ module MailerLite
     private
 
     def request(method, path, query_params = {}, body_params = {})
-      response = connection.send(method) do |request|
-        request.url(path, query_params)
-        request.headers['Content-Type'] = 'application/json'
-
-        if client.config.api_key
-          request.headers['X-MailerLite-ApiKey'] = client.config.api_key
-        end
-
-        request.body = body_params.to_json
+      response = connection.send(method, path) do |request|
+        request.params = query_params unless query_params.empty?
+        request.body = body_params.to_json unless body_params.empty?
       end
 
       response
@@ -53,14 +47,25 @@ module MailerLite
 
     def connection
       conn_opts = {
-        headers: { user_agent: client.config.user_agent },
         url: client.config.url,
-        builder: middleware
+        builder: middleware,
+        headers: headers
       }
       timeout = client.config.timeout
       conn_opts[:request] = { timeout: timeout } unless timeout.nil?
 
       Faraday.new(conn_opts)
+    end
+
+    def headers
+      headers = {
+        'User-Agent' => client.config.user_agent,
+        'Content-Type' => 'application/json'
+      }
+
+      headers['X-MailerLite-ApiKey'] = client.config.api_key if client.config.api_key
+
+      headers
     end
 
     def middleware
