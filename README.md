@@ -66,7 +66,7 @@ implementations:
 
 ## License
 
-The package is available as open source under the terms of the [MIT License][license].
+The gem is available as open source under the terms of the [MIT License][license].
 
 [rubygems]: https://rubygems.org/gems/mailerlite
 [codecov]: https://codecov.io/gh/jpalumickas/mailerlite-ruby
