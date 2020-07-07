@@ -37,12 +37,10 @@ module MailerLite
     private
 
     def request(method, path, query_params = {}, body_params = {})
-      response = connection.send(method, path) do |request|
+      connection.send(method, path) do |request|
         request.params = query_params unless query_params.empty?
         request.body = body_params.to_json unless body_params.empty?
       end
-
-      response
     end
 
     def connection
