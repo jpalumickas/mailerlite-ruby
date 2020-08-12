@@ -32,7 +32,13 @@ Style/DoubleNegation:
   Exclude:
     - 'lib/mailerlite/utils.rb'
 
+Style/OptionalBooleanParameter:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - '*.gemspec'
     - 'spec/**/*_spec.rb'
+
+Lint/MissingSuper:
+  Enabled: false
