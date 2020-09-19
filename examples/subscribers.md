@@ -33,7 +33,7 @@ client.create_subscriber(email: 'john@example.com', name: 'John Smith')
 ## Update single subscriber
 
 ```ruby
-client.update_subscriber(subscriber_id options)
+client.update_subscriber(subscriber_id, options)
 ```
 
 or with email
