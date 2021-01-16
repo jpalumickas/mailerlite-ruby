@@ -7,20 +7,18 @@ jobs:
     name: Test
     strategy:
       matrix:
-        ruby: [2.5, 2.6, 2.7]
+        ruby: [2.5, 2.6, 2.7, 3.0, head]
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.3.4
+    - uses: actions/checkout@v2
     - name: Set up Ruby ${{ matrix.ruby }}
-      uses: actions/setup-ruby@v1.1.2
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundler-cache: true
+
     - name: RSpec
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -34,9 +32,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1.1.2
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 3.0
+        bundler-cache: true
+
     - name: Install dependencies
       run: |
         gem install bundler
