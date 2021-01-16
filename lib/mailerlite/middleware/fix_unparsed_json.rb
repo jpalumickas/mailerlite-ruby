@@ -4,10 +4,10 @@ module MailerLite
   module Middleware
     # This middleware will convert empty response to {}
     class FixUnparsedJson < Faraday::Response::Middleware
-      private
+      def parse(body)
+        return '{}' if body == ''
 
-      def on_complete(response)
-        response[:body] = {} if response[:body] == ''
+        body
       end
     end
   end
