@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 1.0', '>= 1.0.1'
   spec.add_dependency 'faraday_middleware', '~> 1.0'
-  spec.add_dependency 'hashie', '>= 3.5.5'
+  spec.add_dependency 'hashie', '~> 4.0'
 
   # spec.add_development_dependency 'codecov', '~> 0.2', '>= 0.2.12'
   spec.add_development_dependency 'pry', '~> 0.13'
