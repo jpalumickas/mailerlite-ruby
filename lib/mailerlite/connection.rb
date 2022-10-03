@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'faraday'
-require 'faraday_middleware'
+require 'faraday/follow_redirects'
+require 'faraday/mashify'
 require 'json'
 
 require 'mailerlite/mash'
@@ -70,11 +71,11 @@ module MailerLite
       @middleware ||= Faraday::RackBuilder.new do |builder|
         builder.request :json
 
-        builder.use FaradayMiddleware::FollowRedirects
-        builder.use FaradayMiddleware::Mashify, mash_class: MailerLite::Mash
+        builder.response :follow_redirects
+        builder.response :mashify, mash_class: MailerLite::Mash
         builder.use MailerLite::Middleware::UnderscoreKeys
         builder.use MailerLite::Middleware::RaiseError
-        builder.use FaradayMiddleware::ParseJson
+        builder.response :json
         builder.use MailerLite::Middleware::FixUnparsedJson
 
         builder.adapter Faraday.default_adapter

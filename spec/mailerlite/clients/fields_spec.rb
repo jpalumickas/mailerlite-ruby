@@ -67,7 +67,7 @@ describe MailerLite::Clients::Fields do
     end
 
     it 'has correct response' do
-      expect(response).to eq({})
+      expect(response).to be_nil
     end
   end
 end
