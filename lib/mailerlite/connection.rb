@@ -32,7 +32,7 @@ module MailerLite
     end
 
     def delete(path, options = {})
-      request(:delete, path, options).body
+      request(:delete, path, options).body || {}
     end
 
     private

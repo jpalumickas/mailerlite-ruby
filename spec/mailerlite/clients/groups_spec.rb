@@ -71,7 +71,7 @@ describe MailerLite::Clients::Groups do
     end
 
     it 'has correct response' do
-      expect(response).to be_nil
+      expect(response).to eq({})
     end
   end
 
@@ -141,7 +141,7 @@ describe MailerLite::Clients::Groups do
     end
 
     it 'has correct response' do
-      expect(response).to be_nil
+      expect(response).to eq({})
     end
 
     it 'will escape the email' do
