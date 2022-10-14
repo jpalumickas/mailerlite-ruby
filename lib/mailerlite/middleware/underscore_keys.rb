@@ -3,7 +3,7 @@
 module MailerLite
   module Middleware
     # This class will underscore all response keys from CamelCase.
-    class UnderscoreKeys < Faraday::Response::Middleware
+    class UnderscoreKeys < Faraday::Middleware
       def on_complete(response)
         response[:body] = updated_response(response[:body])
       end
