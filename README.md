@@ -60,7 +60,6 @@ See more documentation in [examples][examples] directory.
 This library aims to support and is [tested against][github_actions] the following Ruby
 implementations:
 
-* Ruby 2.6.0
 * Ruby 2.7.0
 * Ruby 3.0.0
 * Ruby 3.1.0
