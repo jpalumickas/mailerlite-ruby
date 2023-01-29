@@ -64,7 +64,8 @@ module MailerLite
       # @see https://developers.mailerlite.com/docs/subscribers.html#delete-a-subscriber
       # @param identifier [Integer,String] ID or email of subscriber.
       #
-      # @return [Boolean] Response from API.
+      # @raise [MailerLite::NotFound] when identifier doesnt exists
+      # @return [Boolean] successful response
       def delete_subscriber(identifier)
         connection.delete("subscribers/#{identifier}", return_body: false).success?
       end
