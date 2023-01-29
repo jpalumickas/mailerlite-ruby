@@ -5,7 +5,6 @@ if ENV['COVERAGE']
 
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
     [
-      # SimpleCov::Formatter::Codecov,
       SimpleCov::Formatter::HTMLFormatter
     ]
   )
