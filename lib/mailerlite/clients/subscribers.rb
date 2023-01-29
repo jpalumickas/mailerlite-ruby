@@ -59,6 +59,17 @@ module MailerLite
         connection.put("subscribers/#{identifier}", options)
       end
 
+      # Delete a Subscriber
+      #
+      # @see https://developers.mailerlite.com/docs/subscribers.html#delete-a-subscriber
+      # @param identifier [Integer,String] ID or email of subscriber.
+      #
+      # @raise [MailerLite::NotFound] when identifier doesnt exists
+      # @return [Boolean] successful response
+      def delete_subscriber(identifier)
+        connection.delete("subscribers/#{identifier}", return_body: false).success?
+      end
+
       # Search for subscribers
       #
       # @see https://developers.mailerlite.com/v2/reference#search-for-subscribers

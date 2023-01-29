@@ -31,8 +31,12 @@ module MailerLite
       request(:post, path, {}, options).body
     end
 
-    def delete(path, options = {})
-      request(:delete, path, options).body || {}
+    def delete(path, options = { return_body: true })
+      return_body = options.delete(:return_body)
+      response = request(:delete, path, options)
+      return response.body || {} if return_body
+
+      response
     end
 
     private

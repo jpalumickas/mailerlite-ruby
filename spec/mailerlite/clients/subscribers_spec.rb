@@ -72,6 +72,35 @@ describe MailerLite::Clients::Subscribers do
     end
   end
 
+  describe '#delete_subscriber' do
+    before do
+      stub_delete(
+        'subscribers/demo@mailerlite.com',
+        return_options: { status: status_code }
+      )
+    end
+
+    subject(:response) do
+      client.delete_subscriber('demo@mailerlite.com')
+    end
+
+    context 'when identifier exists' do
+      let(:status_code) { 204 }
+
+      it 'returns true' do
+        expect(response).to be true
+      end
+    end
+
+    context 'when identifier does not exists' do
+      let(:status_code) { 404 }
+
+      it 'returns false' do
+        expect { response }.to raise_error(MailerLite::NotFound)
+      end
+    end
+  end
+
   describe '#search_subscribers' do
     before do
       stub_get_command(
