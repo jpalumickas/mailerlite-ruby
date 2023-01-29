@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-# require 'codecov'
+if ENV['COVERAGE']
+  require 'simplecov'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
-  [
-    # SimpleCov::Formatter::Codecov,
-    SimpleCov::Formatter::HTMLFormatter
-  ]
-)
-SimpleCov.start
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+    [
+      # SimpleCov::Formatter::Codecov,
+      SimpleCov::Formatter::HTMLFormatter
+    ]
+  )
+  SimpleCov.start
+end
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
