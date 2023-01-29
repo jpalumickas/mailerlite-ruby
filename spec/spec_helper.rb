@@ -51,6 +51,12 @@ def stub_delete_command(action, fixture, options = {})
     .to_return(json_response(fixture))
 end
 
+def stub_delete(action, return_options: {})
+  stub_request(:delete, "#{base_url}/#{action}")
+    .with(headers: { 'X-MailerLite-ApiKey' => 'test_key' })
+    .to_return(return_options)
+end
+
 def stub_post_command(action, fixture, options = {})
   stub_request(:post, "#{base_url}/#{action}")
     .with(body: options, headers: { 'X-MailerLite-ApiKey' => 'test_key' })
