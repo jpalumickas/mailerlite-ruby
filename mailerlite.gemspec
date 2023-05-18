@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Justas Palumickas']
   spec.email         = ['jpalumickas@gmail.com']
 
-  spec.summary       = 'Ruby wrapper for MailerLite API v2'
-  spec.description   = 'Ruby gem for MailerLite API v2'
+  spec.summary       = 'Ruby wrapper for MailerLite API v1'
+  spec.description   = 'Ruby gem for MailerLite API v1'
   spec.homepage      = 'https://github.com/jpalumickas/mailerlite-ruby'
 
   spec.metadata = {
