@@ -64,6 +64,8 @@ implementations:
 * Ruby 3.0.0
 * Ruby 3.1.0
 * Ruby 3.2.0
+* Ruby 3.3.0
+* Ruby 3.4.0
 * Truffleruby
 
 ## License

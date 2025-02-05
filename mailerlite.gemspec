@@ -37,11 +37,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'faraday-follow_redirects', '~> 0.3'
   spec.add_dependency 'faraday-mashify', '~> 0.1'
   spec.add_dependency 'hashie', '>= 4', '< 6'
-
-  spec.add_development_dependency 'pry', '~> 0.14'
-  spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rspec', '~> 3.12'
-  spec.add_development_dependency 'rubocop', '~> 1.44'
-  spec.add_development_dependency 'simplecov', '~> 0.22'
-  spec.add_development_dependency 'webmock', '~> 3.18'
 end
