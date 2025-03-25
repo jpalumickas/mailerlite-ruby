@@ -35,6 +35,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 2.0', '>= 2.0.1'
   spec.add_dependency 'faraday-follow_redirects', '~> 0.3'
-  spec.add_dependency 'faraday-mashify', '~> 0.1'
+  spec.add_dependency 'faraday-mashify', '>= 0.1', '< 2.0'
   spec.add_dependency 'hashie', '>= 4', '< 6'
 end
