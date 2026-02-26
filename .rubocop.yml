@@ -43,3 +43,6 @@ Metrics/BlockLength:
 
 Lint/MissingSuper:
   Enabled: false
+
+Naming/PredicateMethod:
+  Enabled: false
